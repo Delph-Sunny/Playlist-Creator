@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Playlists</title>
+    <title>Create Playlist</title>
     
     <!--Links to CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -14,6 +14,8 @@
     crossorigin="anonymous"/>
     <link rel="stylesheet" href="style.css" />
 </head>
+
+
 <body>
     <!--Dropdown Menu & Title-->
     <header>
@@ -22,14 +24,22 @@
     </header>
     <!--"Main" div for formatting-->
     <main>
-        <!--List of Saved Playlists-->
-        <div class="playlist-list" id="playlists">
+        <!--Welcome Message for new users?-->
+        <div class="message" id="welcome-new">
 
         </div>
-        <!--Create Playlist Page Link-->
-        <div class="create-link">
+        <!--Message for current users?-->
+        <div class="message" id="welcome-user">
 
         </div>
+        <!--Text Boxes for creating new playlist-->
+        <div class="text-input" id="name-playlist">
+
+        </div> 
+        <!--Create new playlist button (Did not add class only ID as this is unique button)-->
+        <button class="" id="create-playlist">
+
+        </button>
     </main>
     <!--Links to Javascript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
