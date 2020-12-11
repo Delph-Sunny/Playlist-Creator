@@ -1,19 +1,26 @@
 # MY COOL PLAYLIST
-
+--- 
+        IN PROGRESS
+---
 
 ## Description 
-
-
+```
+Add description
+```
 
 ## Image of the App
 
+```
+Add image
 ![](./assets/image/MyCoolPlaylist.png)
-
+```
   
 
 ## Features
 
-
+```
+Add app features
+```
 
 ## Team Roles
 
@@ -35,15 +42,17 @@ Back-end work:
 
 ## Future Development
 
+TBD
 
 ## Credits
  
-
-
+TBD
 
 ## License
 
-
+```
+Add credit line
+```
 
 ---
 [link]: https://sossw1.github.io/Playlist-Creator
