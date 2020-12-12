@@ -9,14 +9,14 @@ $(document).ready(function () {
             playlistName: "My running",
             description: "for Saturday workout",
             icon: "play-arrow",
-            iconColor: "red",
+            iconColor: "blue",
         },
         {
             index: 1,
             playlistName: "My second playlist",
             description: "for Sunday workout",
             icon: "android",
-            iconColor: "white",
+            iconColor: "red",
         }
         ,
         {
@@ -37,16 +37,15 @@ $(document).ready(function () {
         console.log(userList)                           // FOR TESTING
         // Looping through the array of playlists
         for (let i = 0; i < userList.length; i++) {
-            var playlistEl = $("<li>");
-            // Adding a class, attribute and text
-            playlistEl.addClass("collection-item avatar");
+            var playlistEl = $(`<li class="collection-item avatar">`);
+            // Adding attributes and children with text
             playlistEl.attr("data-name", userList[i].playlistName);
             playlistEl.attr("data-index", i);
-            playlistEl.append(` <i class="material-icons circle ${userList[i].iconColor}">${userList[i].icon}</i>
+            playlistEl.append(`<i class="material-icons circle ${userList[i].iconColor}">${userList[i].icon}</i>
             <span class="title playlist-title">${userList[i].playlistName}</span>
             <p>${userList[i].description}</p>
-            <a href="#!" class="secondary-content"><i class="material-icons">clear</i></a>`)
-            $("#playlists").append(playlistEl);
+            <a href="#!" class="secondary-content" id="remove"><i class="material-icons">clear</i></a>`)
+            $(".collection").append(playlistEl);
         };
     };
 
@@ -73,19 +72,19 @@ $(document).ready(function () {
 
     /****BROKEN*****/
     // for remove 1 playlist at the time
-    //  var resetIndex = function () {      // reinitilize index value in object
-    //       $('div').each(function (i) {
-    //           $(this).attr("data-index", i)
-    //           userList[i].index = i;
-    //       });
-    //       localStorage.setItem("playlistsList", JSON.stringify(userList));
-    //   }
+    var resetIndex = function () {      // reinitilize index value in object
+        $('li').each(function (i) {
+            $(this).attr("data-index", i)
+            userList[i].index = i;
+        });
+        localStorage.setItem("playlistsList", JSON.stringify(userList));
+    }
 
-    //   $(document).on('click', '#remove', function () {
-    //       const playlistEl = $("<div>");
-    //      let i = $(this).data('index');
-    //      userList.splice(i, 1);
-    //       $.when($(`.playlist-name:eq(${i})`).remove()).then(resetIndex());
-    //   })
+    $(document).on('click', '#remove', function () {
+        const playlistEl = $("<div>");
+        let i = $(this).data('index');
+        userList.splice(i, 1);
+        $.when($(`.playlist-name:eq(${i})`).remove()).then(resetIndex());
+    })
 
 })
