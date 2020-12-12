@@ -7,23 +7,23 @@ $(document).ready(function () {
         {
             index: 0,
             playlistName: "My running",
-            description: "for Saturday workout"
-            icon: "play-arrow"
+            description: "for Saturday workout",
+            icon: "play-arrow",
             iconColor: "red"
         },
         {
             index: 1,
             playlistName: "My second playlist",
-            description: "for Sunday workout"
-            icon: "android"
+            description: "for Sunday workout",
+            icon: "android",
             iconColor: "white"
         }
         ,
         {
             index: 2,
             playlistName: "My third playlist",
-            description: "for week workout"
-            icon: "beach_access"
+            description: "for week workout",
+            icon: "beach_access",
             iconColor: "blue"
         }
     ]
@@ -37,7 +37,7 @@ $(document).ready(function () {
         console.log(userList)
         // Looping through the array of playlists
         for (let i = 0; i < userList.length; i++) {
-            var playlistEl = $("<div>");
+            var playlistEl = $("<li class=>");
             // Adding a class, attribute and text
             playlistEl.addClass("playlist-name");
             playlistEl.attr("data-name", userList[i].playlistName);
