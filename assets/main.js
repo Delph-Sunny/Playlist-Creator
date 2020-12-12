@@ -8,17 +8,23 @@ $(document).ready(function () {
             index: 0,
             playlistName: "My running",
             description: "for Saturday workout"
+            icon: "play-arrow"
+            iconColor: "red"
         },
         {
             index: 1,
             playlistName: "My second playlist",
             description: "for Sunday workout"
+            icon: "android"
+            iconColor: "white"
         }
         ,
         {
             index: 2,
             playlistName: "My third playlist",
             description: "for week workout"
+            icon: "beach_access"
+            iconColor: "blue"
         }
     ]
     localStorage.setItem("playlistsList", JSON.stringify(userList));
@@ -56,6 +62,7 @@ $(document).ready(function () {
 
     // for Clear All button
     $("#clear-all").on("click", function (event) {
+        M.toast({ html: `Are you sure you want to delete all playlists?`, classes: 'rounded' })
         userList = [];
         localStorage.clear();
         /* Disable btn once used */
