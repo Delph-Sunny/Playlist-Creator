@@ -1,3 +1,4 @@
+M.AutoInit();
 // Enter New Playlist
 $("#create-playlist").on("click", function (event) {
     event.preventDefault();
