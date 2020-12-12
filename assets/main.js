@@ -33,13 +33,13 @@ $(document).ready(function () {
 
  /*** Building the playlist list if any ***/
     function playlistBuild() {
-        $("#playlists").empty(); // To avoid repeated elements 
-        console.log(userList)
+        $(".collection").empty(); // To avoid repeated elements 
+        console.log(userList)                           // FOR TESTING
         // Looping through the array of playlists
         for (let i = 0; i < userList.length; i++) {
-            var playlistEl = $("<li class=>");
+            var playlistEl = $("<li>");
             // Adding a class, attribute and text
-            playlistEl.addClass("playlist-name");
+            playlistEl.addClass("collection-item avatar playlist-name");
             playlistEl.attr("data-name", userList[i].playlistName);
             playlistEl.attr("data-index", i);
             playlistEl.text(userList[i].playlistName);
@@ -67,7 +67,7 @@ $(document).ready(function () {
         localStorage.clear();
         /* Disable btn once used */
         $(this).disabled = "true";
-        $("#playlists").empty()
+        $(".collection").empty()
     });
 
     /****BROKEN*****/
