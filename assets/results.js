@@ -21,7 +21,11 @@ displayResults = function(response,title,artist) {
     $("#results").empty();
 
     // Create Elements
-    var albumThumbnail = $(`<img src=${song.strTrackThumb}>`);
+    var thumb = song.strTrackThumb;
+    if(thumb === null) {
+        thumb = "assets/images/missing-thumbnail.png"
+    }
+    var albumThumbnail = $(`<img src=${thumb}>`);
     var songTitle = $(`<p>Title: ${title}</p>`);
     var songArtist = $(`<p>Artist: ${artist}</p>`);
     var songAlbum = $(`<p>Album: ${song.strAlbum}</p>`);
