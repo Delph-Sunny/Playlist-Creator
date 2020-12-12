@@ -8,8 +8,8 @@ $(document).ready(function () {
             index: 0,
             playlistName: "My running",
             description: "for Saturday workout",
-            icon: "play-arrow",
-            iconColor: "blue",
+            icon: "play_arrow",
+            iconColor: "orange",
         },
         {
             index: 1,
@@ -81,10 +81,11 @@ $(document).ready(function () {
     }
 
     $(document).on('click', '#remove', function () {
-        const playlistEl = $("<div>");
-        let i = $(this).data('index');
-        userList.splice(i, 1);
-        $.when($(`.playlist-name:eq(${i})`).remove()).then(resetIndex());
+        const playlistEl = $("<li>");
+        console.log($(this))
+      //  let i = $(this).data('index');
+      //  userList.splice(i, 1);
+      //  $.when($(`.playlist-name:eq(${i})`).remove()).then(resetIndex());
     })
 
 })
