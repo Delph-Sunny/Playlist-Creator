@@ -5,16 +5,35 @@ callADB = function(title,artist) {
         method: "GET"
     }).then(function(response){
         if(response.track !== null) {
-            displayResults(response);
+            displayResults(response,title,artist);
         } else {
             // Modal error: can't find track
-            
+
         }
     });
 }
 
-displayResults = function(response) {
-    console.log(response);
+displayResults = function(response,title,artist) {
+    var song = response.track[0];
+    console.log(song); // Delete Later
+
+    // Empty Results Div
+    $("#results").empty();
+
+    // Create Elements
+    var albumThumbnail = $(`<img src=${song.strTrackThumb}>`);
+    var songTitle = $(`<p>Title: ${title}</p>`);
+    var songArtist = $(`<p>Artist: ${artist}</p>`);
+    var songAlbum = $(`<p>Album: ${song.strAlbum}</p>`);
+    var youtubeLink = $(`<a href=${song.strMusicVid} target='_blank'>Watch on YouTube</a>`);
+    
+    // Append Elements
+    var resultsDiv = $("#results");
+    resultsDiv.append(albumThumbnail);
+    resultsDiv.append(songTitle);
+    resultsDiv.append(songArtist);
+    resultsDiv.append(songAlbum);
+    resultsDiv.append(youtubeLink);
 }
 
 // Event listener - Submit API call
