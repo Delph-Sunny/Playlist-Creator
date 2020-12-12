@@ -24,26 +24,26 @@
     <!--"Main" div for formatting-->
     <main>
         <!--Search Bars-->
-        <textarea class="text-input" id="search-song"></textarea>
-        <button id="songBtn">song</button>
-        <textarea class="text-input" id="search-artist"></textarea>
-        <button id="aristBtn">artist</button>    
-        <!--Results-->
+        <form id="search-form">
+            <label for="songtitle">Song Title</label><br>
+            <input type="text" id="title" name="title"><br>
+            <label for="artist">Artist</label><br>
+            <input type="artist" id="artist" name="artist"><br>
+            <input type="submit" value="Submit">
+        </form>
+        <!--Results (to be emptied and re-populated)-->
         <div class="song-list" id="results">
-
+            <!--Album Thumbnail-->
+            <!--Title-->
+            <!--Artist-->
+            <!--YouTube Link-->
+            <!--Add to Playlist button-->
         </div>
-        <!--Add to Playlist button-->
-        <button class="add-to">
 
-        </button>
-        <!--Play Song Button-->
-        <button class="play">
-            
-        </button>
     </main> 
     <!--Links to Javascript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="assets/script.js"></script>
+    <script src="assets/results.js"></script>
 </body>
 </html>
