@@ -3,25 +3,25 @@ $(document).ready(function () {
     var userList = JSON.parse(localStorage.getItem("playlistsList")) || [];
 
     /***************FOR TESTING**********************/
-   /* userList = [
+    userList = [
         {
-            index: "0",
+            index: 0,
             playlistName: "My running",
             description: "for Saturday workout"
         },
         {
-            index: "1",
+            index: 1,
             playlistName: "My second playlist",
             description: "for Sunday workout"
         }
         ,
         {
-            index: "2",
+            index: 2,
             playlistName: "My third playlist",
             description: "for week workout"
         }
     ]
-    localStorage.setItem('playlistsList', JSON.stringify(userList)); */
+    localStorage.setItem("playlistsList", JSON.stringify(userList)); 
     /**********************************************/
 
 
@@ -33,7 +33,7 @@ $(document).ready(function () {
         console.log(userList)
         // Looping through the array of playlists
         for (let i = 0; i < userList.length; i++) {
-            var playlistEl = $("<p>");
+            var playlistEl = $("<div>");
             // Adding a class, attribute and text
             playlistEl.addClass("playlist-name");
             playlistEl.attr("data-name", userList[i].playlistName);
@@ -42,15 +42,17 @@ $(document).ready(function () {
             playlistEl.append(`<a class="btn-floating btn-small waves-effect waves-light indigo" id="clear" data-index="${i}">
             <i class="material-icons">clear</i></a>`)
             $("#playlists").append(playlistEl);
-            console.log(`$(playlistEl)`)
         };
     };
 
     playlistBuild();
 
     // when clicking on a playlist button
-    $(document).on("click", ".playlist-name", function (event) {
-        userChoice = $(this).data('index');
+    $(document).on("click",".playlist-name", function (event) {
+        event.preventDefault();
+        userChoice = ($(this).data('index'));
+       
+        localStorage.setItem("index", JSON.stringify(userChoice));
         // also will send to another page
     });
 
@@ -67,15 +69,15 @@ $(document).ready(function () {
      /****BROKEN*****/
     // for remove 1 playlist at the time
     var resetIndex = function () {      // reinitilize index value in object
-        $('p').each(function (i) {
+        $('div').each(function (i) {
             $(this).attr("data-index", i)
             userList[i].index = i;
         });
-        localStorage.setItem('playlistsList', JSON.stringify(userList));
+        localStorage.setItem("playlistsList", JSON.stringify(userList));
     }
 
     $(document).on('click', '#clear', function () {
-        const playlistEl = $("<p>");
+        const playlistEl = $("<div>");
         let i = $(this).data('index');
         userList.splice(i, 1);
         $.when($(`.playlist-name:eq(${i})`).remove()).then(resetIndex());

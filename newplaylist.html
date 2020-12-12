@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Playlist</title>
-    
+
     <!--Links to CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/style.css" />
 </head>
 
@@ -33,17 +31,39 @@
 
         </div>
         <!--Text Boxes for creating new playlist-->
-        <div class="text-input" id="name-playlist">
+        <div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6" style="background-color: rgb(64, 166, 235); min-width: 20px;">
+                        <label for="name-playlist">PlayList name</label>
+                        <input class="text-input" placeholder="Enter a name" id="name-playlist" type="text">
+                        <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                        <div style="position: relative">
+                            <div id="toast-container"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6" style="background-color: rgb(145, 42, 114); min-width: 20px;">
+                        <label for="text-area">Description</label>
+                        <textarea class="materialize-textarea" id="text-area" placeholder="Enter a description"
+                            type="text"></textarea>
+                    </div>
+                </div>
+                <!--Create new playlist button (Did not add class only ID as this is unique button)-->
+                <div class="row">
+                    <button class="add-songs" id="create-playlist" type="submit">Add Music
 
-        </div> 
-        <!--Create new playlist button (Did not add class only ID as this is unique button)-->
-        <button class="add-songs" id="create-playlist">
+                    </button>
+                </div>
 
-        </button>
+            </form>
+        </div>
     </main>
     <!--Links to Javascript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/newplaylist.js"></script>
 </body>
+
 </html>
