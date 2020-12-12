@@ -57,7 +57,7 @@ $(document).ready(function () {
         userChoice = ($(this).data('index'));
 
         localStorage.setItem("index", JSON.stringify(userChoice));
-        // also will send to another page
+        window.location.href="playlistview.html";
     });
 
     // for Clear All button
