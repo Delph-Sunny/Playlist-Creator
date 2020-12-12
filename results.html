@@ -24,10 +24,13 @@
     <!--"Main" div for formatting-->
     <main>
         <!--Search Bars-->
-        <textarea class="text-input" id="search-song"></textarea>
-        <button id="songBtn">song</button>
-        <textarea class="text-input" id="search-artist"></textarea>
-        <button id="aristBtn">artist</button>    
+        <form id="search-form">
+            <label for="songtitle">Song Title</label><br>
+            <input type="text" id="title" name="title"><br>
+            <label for="artist">Artist</label><br>
+            <input type="artist" id="artist" name="artist"><br>
+            <input type="submit" value="Submit">
+        </form>
         <!--Results-->
         <div class="song-list" id="results">
 
