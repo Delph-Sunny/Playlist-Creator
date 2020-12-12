@@ -9,6 +9,10 @@ body {
     font-size: 20px;
 }
 
+.collection .collection-item {
+    background-color: #213D3D;
+}
+
 .center {
     text-align: center;
 }
@@ -23,6 +27,8 @@ body {
 
 .btn-large {
     background-color: #7A9E9E;
+    width: 100%;
+    text-align: center;
     
 }
 
