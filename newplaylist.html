@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Playlist</title>
-    
+
     <!--Links to CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/style.css" />
 </head>
 
@@ -20,30 +18,45 @@
     <!--Dropdown Menu & Title-->
     <header>
         <!--Placeholder for title-->
-        <div>My Cool Playlist</div>
+        <div class="title center">My Cool Playlist</div>
     </header>
     <!--"Main" div for formatting-->
-    <main>
+    <main class="col s12">
         <!--Welcome Message for new users?-->
-        <div class="message" id="welcome-new">
-
+        <div class="message center" id="welcome-new">
+            Welcome! Please enter a name and description for your first playlist!
         </div>
         <!--Message for current users?-->
-        <div class="message" id="welcome-user">
-
+        <div class="message center" id="welcome-user">
+            
         </div>
         <!--Text Boxes for creating new playlist-->
-        <div class="text-input" id="name-playlist">
-
-        </div> 
-        <!--Create new playlist button (Did not add class only ID as this is unique button)-->
-        <button class="add-songs" id="create-playlist">
-
-        </button>
+        <div class="row center-div">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s7">
+                  <input id="input_text" type="text" data-length="10">
+                  <label for="input_text">Playlist Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s7">
+                    <input id="input_text2" type="text" data-length="80">
+                  <label for="input_text2">Description</label>
+                </div>
+              </div>
+            </form>
+          </div>   
+        
+        <!--Create new playlist button-->
+        <div class="add-songs center" id="create-playlist">
+            <div><a class="waves-effect waves-light btn-large">Create Playlist</a></div>
+        </div>
     </main>
     <!--Links to Javascript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/newplaylist.js"></script>
 </body>
+
 </html>
