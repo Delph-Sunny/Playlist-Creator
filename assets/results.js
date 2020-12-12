@@ -9,7 +9,7 @@ function callADB(title,artist) {
             artist = fixCaps(artist);
             displayResults(response,title,artist);
         } else {
-            // Modal error: can't find track
+            // Modal error: can't find track 
 
         }
     });
