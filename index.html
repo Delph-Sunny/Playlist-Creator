@@ -19,9 +19,17 @@
 
 <body>
     <!--Dropdown Menu & Title-->
-    <header class="title center">
+    <header>
         <!--Placeholder for title-->
-         My Cool Playlist  
+        <nav> <!-- navbar content here  --> </nav>
+        <ul id="slide-out" class="sidenav">
+          <li><a href="#!">First Link With Icon</a></li>
+          <li><a href="#!">Second Link</a></li>
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Subheader</a></li>
+          <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           
     </header>
     <!--"Main" div for formatting-->
@@ -29,11 +37,15 @@
         <!--List of Saved Playlists-->
         <br><br>
         <div class="playlist-list center" id="playlists">
-            <div><a class="waves-effect waves-light btn-large bottom-margin">Playlist 1</a></div>
+            <div>
+                <a class="waves-effect waves-light btn-large bottom-margin">Playlist 1</a>
+                <a class="btn-floating btn-large waves-effect waves-light teal lighten-2"><i class="material-icons">clear</i></a>
+            </div>
             <div><a class="waves-effect waves-light btn-large bottom-margin">Playlist 2</a></div>
             <div><a class="waves-effect waves-light btn-large bottom-margin">Playlist 3</a></div>
             <div><a class="waves-effect waves-light btn-large bottom-margin">Playlist 4</a></div>
         </div>
+        
         <button id="clear-all">Clear All</button>
         <!--Create Playlist Page Link-->
         <div class="create-link center">
