@@ -44,7 +44,7 @@ $(document).ready(function () {
             playlistEl.append(`<i class="material-icons circle ${userList[i].iconColor}">${userList[i].icon}</i>
             <span class="title playlist-title">${userList[i].playlistName}</span>
             <p>${userList[i].description}</p>
-            <a href="#!" class="secondary-content" id="remove"><i class="material-icons">clear</i></a>`)
+            <a href="#!" class="secondary-content" id="remove" data-index="${i}"><i class="material-icons">clear</i></a>`)
             $(".collection").append(playlistEl);
         };
     };
@@ -82,10 +82,10 @@ $(document).ready(function () {
 
     $(document).on('click', '#remove', function () {
         const playlistEl = $("<li>");
-        console.log($(this))
-      //  let i = $(this).data('index');
-      //  userList.splice(i, 1);
-      //  $.when($(`.playlist-name:eq(${i})`).remove()).then(resetIndex());
+        console.log($(this).data('index'))
+      let i = $(this).data('index');
+      userList.splice(i, 1);
+      $.when($(`.collection-item:eq(${i})`).remove()).then(resetIndex());
     })
 
 })
