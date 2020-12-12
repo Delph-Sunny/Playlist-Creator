@@ -48,3 +48,4 @@ $("#clear").on("click", function (event) {
     localStorage.clear();
    
 });
+
