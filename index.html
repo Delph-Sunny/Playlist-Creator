@@ -21,15 +21,20 @@
     <!--Dropdown Menu & Title-->
     <header>
         <!--Placeholder for title-->
-        <nav> <!-- navbar content here  --> </nav>
-        <ul id="slide-out" class="sidenav">
-          <li><a href="#!">First Link With Icon</a></li>
-          <li><a href="#!">Second Link</a></li>
-          <li><div class="divider"></div></li>
-          <li><a class="subheader">Subheader</a></li>
-          <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-        </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo">My Cool Playlist</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">My Playlists</a></li>
+                <li><a href="newplaylist.html">Create New Playlist</a></li>
+              </ul>
+            </div>
+          </nav>
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">My Playlists</a></li>
+            <li><a href="newplaylist.html">Create New Playlist</a></li>
+          </ul>  
           
     </header>
     <!--"Main" div for formatting-->
@@ -41,11 +46,11 @@
                     <i class="material-icons circle red">play_arrow</i>
                   <span class="title playlist-title">Title</span>
                   <p>Description</p>
-                  <a href="#!" class="secondary-content"><i class="material-icons">clear</i></a>
+                  <a href="#!" class="secondary-content" id="remove"><i class="material-icons">clear</i></a>
                 </li>
             </ul>       
         <!--Create Playlist Page Link-->
-        <div class="center row">
+        <div class="row">
             <div class="col s12 m6 l3"><a class="waves-effect waves-light btn-large">Create New Playlist</a></div>
             <div class="col s12 m6 l3"><a class="waves-effect waves-light btn-large" id="clear-all">Clear All</a></div>
         </div>
