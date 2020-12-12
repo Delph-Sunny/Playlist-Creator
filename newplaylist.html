@@ -18,46 +18,39 @@
     <!--Dropdown Menu & Title-->
     <header>
         <!--Placeholder for title-->
-        <div>My Cool Playlist</div>
+        <div class="title center">My Cool Playlist</div>
     </header>
     <!--"Main" div for formatting-->
-    <main>
+    <main class="col s12">
         <!--Welcome Message for new users?-->
-        <div class="message" id="welcome-new">
-
+        <div class="message center" id="welcome-new">
+            Welcome! Please enter a name and description for your first playlist!
         </div>
         <!--Message for current users?-->
-        <div class="message" id="welcome-user">
-
+        <div class="message center" id="welcome-user">
+            
         </div>
         <!--Text Boxes for creating new playlist-->
-        <div>
+        <div class="row center-div">
             <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6" style="background-color: rgb(64, 166, 235); min-width: 20px;">
-                        <label for="name-playlist">PlayList name</label>
-                        <input class="text-input" placeholder="Enter a name" id="name-playlist" type="text">
-                        <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                        <div style="position: relative">
-                            <div id="toast-container"></div>
-                        </div>
-                    </div>
+              <div class="row">
+                <div class="input-field col s7">
+                  <input id="input_text" type="text" data-length="10">
+                  <label for="input_text">Playlist Name</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6" style="background-color: rgb(145, 42, 114); min-width: 20px;">
-                        <label for="text-area">Description</label>
-                        <textarea class="materialize-textarea" id="text-area" placeholder="Enter a description"
-                            type="text"></textarea>
-                    </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s7">
+                    <input id="input_text2" type="text" data-length="80">
+                  <label for="input_text2">Description</label>
                 </div>
-                <!--Create new playlist button (Did not add class only ID as this is unique button)-->
-                <div class="row">
-                    <button class="add-songs" id="create-playlist" type="submit">Add Music
-
-                    </button>
-                </div>
-
+              </div>
             </form>
+          </div>   
+        
+        <!--Create new playlist button-->
+        <div class="add-songs center" id="create-playlist">
+            <div><a class="waves-effect waves-light btn-large">Create Playlist</a></div>
         </div>
     </main>
     <!--Links to Javascript-->
