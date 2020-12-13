@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    var userChoice = JSON.parse(localStorage.getItem("index")) || {};
+    var userChoice = 0;
     var userList = JSON.parse(localStorage.getItem("playlistsList")) || [];
-
+    $('.modal').modal();
     /***************FOR TESTING**********************/
     userList = [
         {
@@ -9,14 +9,14 @@ $(document).ready(function () {
             playlistName: "My running",
             description: "for Saturday workout",
             icon: "play_arrow",
-            iconColor: "orange",
+            iconColor: "deep-orange lighten-3",
         },
         {
             index: 1,
             playlistName: "My second playlist",
             description: "for Sunday workout",
             icon: "android",
-            iconColor: "red",
+            iconColor: "light-green lighten-2",
         }
         ,
         {
@@ -24,7 +24,7 @@ $(document).ready(function () {
             playlistName: "My third playlist",
             description: "for week workout",
             icon: "beach_access",
-            iconColor: "blue",
+            iconColor: "cyan",
         }
     ]
     localStorage.setItem("playlistsList", JSON.stringify(userList));
@@ -54,14 +54,18 @@ $(document).ready(function () {
     $(document).on("click", ".collection-item", function (event) {
         event.preventDefault();
         userChoice = ($(this).data("index"));
-
-        localStorage.setItem("index", JSON.stringify(userChoice));
+        localStorage.setItem("index", JSON.stringify(userChoice));        
         window.location.href="playlistview.html";
     });
 
     // for Clear All button
-    $("#clear-all").on("click", function (event) {
-        //   M.toast({ html: `Are you sure you want to delete all playlists?`, classes: 'rounded' })
+   // var instances = M.Modal.init(elems, options);
+  // $("#clear-all").on("click", function (event) {
+  
+  
+
+    $("#modal-yes").on("click", function (event) {
+             //   M.toast({ html: `Are you sure you want to delete all playlists?`, classes: 'rounded' })
         userList = [];
         localStorage.clear();
         /* Disable btn once used */
