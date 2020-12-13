@@ -1,13 +1,20 @@
-function callADB(title,artist) {
+function calls(title,artist) {
     var queryURL = `https://theaudiodb.com/api/v1/json/1/searchtrack.php?s=${artist}&t=${title}`;
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response){
         if(response.track !== null) {
+            var tadbResponse = response;
             title = fixCaps(title);
             artist = fixCaps(artist);
-            displayResults(response,title,artist);
+            queryURL = `https://api.lyrics.ovh/v1/${artist}/${title}`;
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response){
+                displayResults(tadbResponse,title,artist,response.lyrics)
+            })
         } else {
             // Modal error: can't find track 
 
@@ -15,7 +22,7 @@ function callADB(title,artist) {
     });
 }
 
-function displayResults(response,title,artist) {
+function displayResults(response,title,artist,lyrics) {
     var song = response.track[0];
     console.log(song); // Delete Later
     var titleId = toLowerCaseNoSpaces(title);
@@ -49,7 +56,7 @@ function displayResults(response,title,artist) {
     removeResultButton.click(function(){
         $(`#result-${titleId}`).remove();
     });
-    var lyrics = $(`<p class='lyrics'>Collapsible Lyrics</p>`);
+    var lyricsEl = $(`<p class='lyrics'>${lyrics}</p>`);
 
     // Append Elements
     var resultsDiv = $("#results");
@@ -60,7 +67,7 @@ function displayResults(response,title,artist) {
     result.append(youtubeLinkEl);
     result.append(addButton);
     result.append(removeResultButton);
-    result.append(lyrics);
+    result.append(lyricsEl);
     resultsDiv.append(result);
 }
 
@@ -98,7 +105,7 @@ $("#search-form").submit(function(event){
     event.preventDefault();
     var title = $("#title")[0].value;
     var artist = $("#artist")[0].value;
-    callADB(title,artist);
+    calls(title,artist);
 })
 
 // Event listener - Go to playlist
