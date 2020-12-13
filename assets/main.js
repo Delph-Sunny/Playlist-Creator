@@ -54,18 +54,12 @@ $(document).ready(function () {
     $(document).on("click", ".collection-item", function (event) {
         event.preventDefault();
         userChoice = ($(this).data("index"));
-        localStorage.setItem("index", JSON.stringify(userChoice));        
-        window.location.href="playlistview.html";
+        localStorage.setItem("index", JSON.stringify(userChoice));
+        window.location.href = "playlistview.html";
     });
 
-    // for Clear All button
-   // var instances = M.Modal.init(elems, options);
-  // $("#clear-all").on("click", function (event) {
-  
-  
-
+    // for Clear All button after confirmation with the modal
     $("#modal-yes").on("click", function (event) {
-             //   M.toast({ html: `Are you sure you want to delete all playlists?`, classes: 'rounded' })
         userList = [];
         localStorage.clear();
         /* Disable btn once used */
