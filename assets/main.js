@@ -2,6 +2,15 @@ $(document).ready(function () {
     var userChoice = 0;
     var userList = JSON.parse(localStorage.getItem("playlistsList")) || [];
     $('.modal').modal();
+
+    /* Splash Screen animation timer */
+    var timer1 = setInterval(function () {
+        $("#splash").style.opacity = "0";
+        var timer2 = setInterval(function () {
+            $("#splash").style.display = "none";
+        }, 810);
+    }, 2500);
+
     /***************FOR TESTING**********************/
     userList = [
         {
