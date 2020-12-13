@@ -18,34 +18,53 @@ function callADB(title,artist) {
 function displayResults(response,title,artist) {
     var song = response.track[0];
     console.log(song); // Delete Later
+    var titleId = toLowerCaseNoSpaces(title);
 
     // Create Elements
     var thumb = song.strTrackThumb;
     if(thumb === null) {
         thumb = "assets/images/missing-thumbnail.png"
     }
-
+    var result = $(`<div class='result' id='result-${titleId}'></div>`)
     var albumThumbnail = $(`<img src=${thumb}>`);
     var songTitle = $(`<p>Title: ${title}</p>`);
     var songArtist = $(`<p>Artist: ${artist}</p>`);
     var songAlbum = $(`<p>Album: ${song.strAlbum}</p>`);
     var youtubeLink = $(`<a href=${song.strMusicVid} target='_blank'>Watch on YouTube</a>`); // Some links broken, might be able to test for it
-    var addButton = $(`<button class='add-to-playlist'>Add to Playlist</button>`); // Needs event listener and id
-    var removeResultButton = $(`<button class='remove-result'>Remove Result</button>`); // Needs event listener and id
+    var addButton = $(`<button class='add-to-playlist'>Add to Playlist</button>`);
+    // Event Listener - Add this result to current playlist
+    addButton.click(function(){
+        
+    });
+    var removeResultButton = $(`<button class='remove-result'>Remove Result</button>`);
+    // Event Listener - Remove this result
+    removeResultButton.click(function(){
+        console.log($(`#result-${titleId}`));
+        $(`#result-${titleId}`).remove();
+    });
     var lyrics = $(`<p class='lyrics'>Collapsible Lyrics</p>`);
 
     // Append Elements
     var resultsDiv = $("#results");
-    resultsDiv.append(albumThumbnail);
-    resultsDiv.append(songTitle);
-    resultsDiv.append(songArtist);
-    resultsDiv.append(songAlbum);
-    resultsDiv.append(youtubeLink);
-    resultsDiv.append(addButton);
-    resultsDiv.append(removeResultButton);
-    resultsDiv.append(lyrics);
+    result.append(albumThumbnail);
+    result.append(songTitle);
+    result.append(songArtist);
+    result.append(songAlbum);
+    result.append(youtubeLink);
+    result.append(addButton);
+    result.append(removeResultButton);
+    result.append(lyrics);
+    resultsDiv.append(result);
 }
 
+// Returns lowercase string with no spaces
+function toLowerCaseNoSpaces(string) {
+    string = string.toLowerCase();
+    string = string.replaceAll(" ","");
+    return string;
+}
+
+// Returns string with first letter of each word capitalized
 function fixCaps(string) {
     string = string.toLowerCase();
     string = string.charAt(0).toUpperCase() + string.substr(1,string.length);
