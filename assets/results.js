@@ -88,3 +88,8 @@ $("#search-form").submit(function(event){
 $(".playlist-link").click(function(){
     window.location = "playlistview.html";
 });
+
+// Event listener - Clear all results
+$("#clear-results").click(function(){
+    $("#results").empty();
+})
