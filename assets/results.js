@@ -30,7 +30,15 @@ function displayResults(response,title,artist) {
     var songTitle = $(`<p>Title: ${title}</p>`);
     var songArtist = $(`<p>Artist: ${artist}</p>`);
     var songAlbum = $(`<p>Album: ${song.strAlbum}</p>`);
-    var youtubeLink = $(`<a href=${song.strMusicVid} target='_blank'>Watch on YouTube</a>`); // Some links broken, might be able to test for it
+    var youtubeLink = song.strMusicVid;
+    // If no link, create link to a youtube search with the song's title and artist
+    if(youtubeLink === null) {
+        var searchTitle = searchString(title);
+        var searchArtist = searchString(artist);
+        var query = searchTitle + "+" + searchArtist;
+        youtubeLink = `https://www.youtube.com/results?search_query=${query}`;
+    }
+    var youtubeLinkEl = $(`<a href=${youtubeLink} target='_blank'>Watch on YouTube</a>`);
     var addButton = $(`<button class='add-to-playlist'>Add to Playlist</button>`);
     // Event Listener - Add this result to current playlist
     addButton.click(function(){
@@ -49,7 +57,7 @@ function displayResults(response,title,artist) {
     result.append(songTitle);
     result.append(songArtist);
     result.append(songAlbum);
-    result.append(youtubeLink);
+    result.append(youtubeLinkEl);
     result.append(addButton);
     result.append(removeResultButton);
     result.append(lyrics);
@@ -73,6 +81,15 @@ function fixCaps(string) {
             string = string.substr(0,i+1) + char.toUpperCase() + string.substr(i+2,string.length);
         }
     }
+    return string;
+}
+
+// Returns lowercase string with + instead of spaces
+function searchString(string) {
+    string = string.toLowerCase();
+    string = string.trim();
+    string = string.replaceAll(" ","+");
+    console.log(string);
     return string;
 }
 
