@@ -39,7 +39,6 @@ function displayResults(response,title,artist) {
     var removeResultButton = $(`<button class='remove-result'>Remove Result</button>`);
     // Event Listener - Remove this result
     removeResultButton.click(function(){
-        console.log($(`#result-${titleId}`));
         $(`#result-${titleId}`).remove();
     });
     var lyrics = $(`<p class='lyrics'>Collapsible Lyrics</p>`);
