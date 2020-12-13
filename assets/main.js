@@ -34,7 +34,6 @@ $(document).ready(function () {
  /*** Building the playlist list if any ***/
     function playlistBuild() {
         $(".collection").empty(); // To avoid repeated elements 
-        console.log(userList)                           // FOR TESTING
         // Looping through the array of playlists
         for (let i = 0; i < userList.length; i++) {
             var playlistEl = $(`<li class="collection-item avatar">`);
@@ -54,7 +53,7 @@ $(document).ready(function () {
     // when clicking on a playlist button
     $(document).on("click", ".collection-item", function (event) {
         event.preventDefault();
-        userChoice = ($(this).data('index'));
+        userChoice = ($(this).data("index"));
 
         localStorage.setItem("index", JSON.stringify(userChoice));
         window.location.href="playlistview.html";
@@ -70,22 +69,13 @@ $(document).ready(function () {
         $(".collection").empty()
     });
 
-    /****BROKEN*****/
     // for remove 1 playlist at the time
-    var resetIndex = function () {      // reinitilize index value in object
-        $('li').each(function (i) {
-            $(this).attr("data-index", i)
-            userList[i].index = i;
-        });
+    $(document).on("click", "#remove", function (event) {
+        event.stopPropagation();
+        let i = $(this).data("index");
+        userList.splice(i, 1);
+        for (let j = 0; j < userList.length; j++) { userList[j].index = j }
         localStorage.setItem("playlistsList", JSON.stringify(userList));
-    }
-
-    $(document).on('click', '#remove', function () {
-        const playlistEl = $("<li>");
-        console.log($(this).data('index'))
-      let i = $(this).data('index');
-      userList.splice(i, 1);
-      $.when($(`.collection-item:eq(${i})`).remove()).then(resetIndex());
+        playlistBuild()
     })
-
 })
