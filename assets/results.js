@@ -1,13 +1,20 @@
-function callADB(title,artist) {
+function calls(title,artist) {
     var queryURL = `https://theaudiodb.com/api/v1/json/1/searchtrack.php?s=${artist}&t=${title}`;
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response){
         if(response.track !== null) {
+            var tadbResponse = response;
             title = fixCaps(title);
             artist = fixCaps(artist);
-            displayResults(response,title,artist);
+            queryURL = `https://api.lyrics.ovh/v1/${artist}/${title}`;
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response){
+                displayResults(tadbResponse,title,artist,response.lyrics)
+            })
         } else {
             // Modal error: can't find track 
 
@@ -15,7 +22,7 @@ function callADB(title,artist) {
     });
 }
 
-function displayResults(response,title,artist) {
+function displayResults(response,title,artist,lyrics) {
     var song = response.track[0];
     console.log(song); // Delete Later
     var titleId = toLowerCaseNoSpaces(title);
@@ -30,7 +37,15 @@ function displayResults(response,title,artist) {
     var songTitle = $(`<p>Title: ${title}</p>`);
     var songArtist = $(`<p>Artist: ${artist}</p>`);
     var songAlbum = $(`<p>Album: ${song.strAlbum}</p>`);
-    var youtubeLink = $(`<a href=${song.strMusicVid} target='_blank'>Watch on YouTube</a>`); // Some links broken, might be able to test for it
+    var youtubeLink = song.strMusicVid;
+    // If no link, create link to a youtube search with the song's title and artist
+    if(youtubeLink === null) {
+        var searchTitle = searchString(title);
+        var searchArtist = searchString(artist);
+        var query = searchTitle + "+" + searchArtist;
+        youtubeLink = `https://www.youtube.com/results?search_query=${query}`;
+    }
+    var youtubeLinkEl = $(`<a href=${youtubeLink} target='_blank'>Watch on YouTube</a>`);
     var addButton = $(`<button class='add-to-playlist'>Add to Playlist</button>`);
     // Event Listener - Add this result to current playlist
     addButton.click(function(){
@@ -41,7 +56,7 @@ function displayResults(response,title,artist) {
     removeResultButton.click(function(){
         $(`#result-${titleId}`).remove();
     });
-    var lyrics = $(`<p class='lyrics'>Collapsible Lyrics</p>`);
+    var lyricsEl = $(`<p class='lyrics'>${lyrics}</p>`);
 
     // Append Elements
     var resultsDiv = $("#results");
@@ -49,10 +64,10 @@ function displayResults(response,title,artist) {
     result.append(songTitle);
     result.append(songArtist);
     result.append(songAlbum);
-    result.append(youtubeLink);
+    result.append(youtubeLinkEl);
     result.append(addButton);
     result.append(removeResultButton);
-    result.append(lyrics);
+    result.append(lyricsEl);
     resultsDiv.append(result);
 }
 
@@ -76,12 +91,21 @@ function fixCaps(string) {
     return string;
 }
 
+// Returns lowercase string with + instead of spaces
+function searchString(string) {
+    string = string.toLowerCase();
+    string = string.trim();
+    string = string.replaceAll(" ","+");
+    console.log(string);
+    return string;
+}
+
 // Event listener - Submit API call
 $("#search-form").submit(function(event){
     event.preventDefault();
     var title = $("#title")[0].value;
     var artist = $("#artist")[0].value;
-    callADB(title,artist);
+    calls(title,artist);
 })
 
 // Event listener - Go to playlist
