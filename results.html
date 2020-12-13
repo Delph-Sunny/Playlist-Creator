@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
-
+    
     <!--Links to CSS-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"/>
     <link rel="stylesheet" href="assets/style.css" />
 </head>
-
 <body>
     <!--Dropdown Menu & Title-->
     <header>
-        <!--Placeholder for title-->
-        <div class="playlist-title">Playlist Name</div>
-        <button class="playlist-link">See my Playlist</button>
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo playlist-title">Playlist Name</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down"></ul>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">My Playlists</a></li>
+                <li><a href="newplaylist.html">Create New Playlist</a></li>
+              </ul>
+            </div>
+          </nav>
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">My Playlists</a></li>
+            <li><a href="newplaylist.html">Create New Playlist</a></li>
+          </ul>   
+     
+        <a class="waves-effect waves-light btn right playlist-link">See My Playlist</a>
     </header>
     <!--"Main" div for formatting-->
     <main>
@@ -29,8 +45,6 @@
             <label for="artist">Artist</label><br>
             <input type="artist" id="artist" name="artist"><br>
             <input type="submit" value="Submit">
-            <!--Toast container-->
-            <div id="toast-container"></div>
         </form>
         <!--Clear Results Button-->
         <button id="clear-results">Clear All Results</button>
@@ -39,7 +53,7 @@
 
             <!-- Example Result -->
 
-            <!-- <div class="result">
+            <div class="result">
                 <img src="assets/images/missing-thumbnail.png">
                 <p>Title:</p>
                 <p>Artist:</p>
@@ -48,28 +62,14 @@
                 <button>Add to Playlist</button>
                 <button>Remove Result</button>
                 <p>Collapsible Lyrics</p>
-            </div> -->
+            </div>
 
         </div>
-      
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal ">
-            <div class="modal-content">
-                <h6>Confirmation</h6>
-                <p>Are you sure you want to delete all playlists? You will not be able to undo this. </p>
-            </div>
-            <div class="modal-footer row">
-                <div class="col s12 m6 l3"><a href="#!" class="modal-close waves-effect waves-green btn-large"
-                        id="modal-yes">Yes</a></div>
-                <div class="col s12 m6 l3"><a href="#!"
-                        class="modal-close waves-effect waves-green btn-large modal-close">Cancel</a></div>
-            </div>
-        </div>
-    </main>
+
+    </main> 
     <!--Links to Javascript-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/results.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="assets/results.js"></script> -->
 </body>
-
 </html>
