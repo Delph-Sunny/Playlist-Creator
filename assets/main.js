@@ -5,13 +5,13 @@ $(document).ready(function () {
 
     /* Splash Screen animation timer */
     var timer1 = setInterval(function () {
-        $("#splash").css("opacity","0");
+        $("#splash").css("opacity", "0");
         var timer2 = setInterval(function () {
-            $("#splash").css("display","none");
+            $("#splash").css("display", "none");
         }, 810);
     }, 2500);
 
-   
+
     /***************FOR TESTING**********************/
     userList = [
         {
@@ -38,10 +38,16 @@ $(document).ready(function () {
         }
     ]
     localStorage.setItem("playlistsList", JSON.stringify(userList));
-    /********************************************
+    /********************************************/
 
 
- /*** Building the playlist list if any ***/
+    // when clicking on New playlist button
+    $(document).on("click", ".new-playlist", function (event) {
+        window.location.href = "newplaylist.html";
+    });
+
+
+    /*** Building the playlist list if any ***/
     function playlistBuild() {
         $(".collection").empty(); // To avoid repeated elements 
         // Looping through the array of playlists
