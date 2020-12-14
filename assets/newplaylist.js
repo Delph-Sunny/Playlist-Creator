@@ -5,7 +5,8 @@ $("#create-playlist").on("click", function (event) {
     var userList = JSON.parse(localStorage.getItem("playlistsList")) || [];
     var newList = {};
     var newIndex;
-    var newName = $("#name-playlist").val().trim();
+    var newName = $("#input_text").val();
+    // Mandatory field for name
     if (newName != "") {
         if (userList.length == 0) {
             newIndex = 0;
@@ -13,21 +14,43 @@ $("#create-playlist").on("click", function (event) {
             newIndex = userList.length;
         }
         newList.index = newIndex
-        newList.playlistName = newName;
+        newList.playlistName = newName.trim();
     }
     else {
         M.toast({ html: `Ooops! <br> Your forgot to enter a playlist name.`, classes: 'rounded' })
         // $(".helper-text").text("Ooops! Your forgot to enter a playlist name", 4000);
         return;
     }
-    console.log(newList);
-    console.log(newIndex)
-    var newDescription = $("#text-area").val().trim();
-    newList.description = newDescription;
+    var newDescription = $("#input_text2").val()
+    if (newDescription != "") {
+        newList.description = ""
+    }
+    else {
+        newList.description = newDescription.trim();
+    }
+/* Broken
+    var newIcon = $('#dropdown1').dropdown();
+    if (newIcon != "") {
+        newList.icon = "music_video" // Default icon
+    }
+    else {
+        newList.icon = newIcon;
+    }
 
-    userList.push(newList);
+     
+    var newColor = $('#dropdown2').dropdown();
+    console.log(newColor)
+    if (newColor != "") {
+        newList.iconColor = "orange"  // Default color for icon background
+    }
+    else {
+        newList.iconColor = newColor;
+    }
+    */
+    userList.push(newList); 
     localStorage.setItem("playlistsList", JSON.stringify(userList));
     localStorage.setItem("index", JSON.stringify(newIndex));
+    window.location.href = "results.html"
 })
 
 
