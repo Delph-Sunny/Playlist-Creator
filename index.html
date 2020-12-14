@@ -2,83 +2,93 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Playlists</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Playlists</title>
 
-    <!--Links to CSS-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <!--Links to Materialize Icons-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Links to CSS-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <!--Links to Materialize Icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
-    <!--Splash Screen-->
-    <div id="splash" class="overlay" >
-      <div class="fadedcolor">
-          <h1 class="center-align white-text">My Cool Playlist</h1>
-          <div class="center-align">
-              <img src="assets/images/missing-thumbnail.png" alt="Logo"/>
-          </div>        
+  <!--Splash Screen-->
+  <div id="splash" class="overlay">
+    <div class="fadedcolor">
+      <h1 class="center-align white-text">My Cool Playlist</h1>
+      <div class="center-align">
+        <img src="assets/images/missing-thumbnail.png" alt="Logo" />
       </div>
-  </div>
-    <!--Dropdown Menu & Title-->
-    <header>
-        <nav>
-            <div class="nav-wrapper">
-              <a href="#" class="brand-logo">My Cool Playlist</a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="index.html">My Playlists</a></li>
-                <li><a href="newplaylist.html">Create New Playlist</a></li>
-              </ul>
-            </div>
-          </nav>
-          <ul class="sidenav" id="mobile-demo">
-            <li><a href="index.html">My Playlists</a></li>
-            <li><a href="newplaylist.html">Create New Playlist</a></li>
-          </ul>  
-          
-    </header>
-    <!--"Main" div for formatting-->
-    <main class="col s12">
-        <!--List of Saved Playlists-->
-        <br><br>
-            <ul class="collection">
-                <li class="collection-item avatar">
-                    <i class="material-icons circle red">play_arrow</i>
-                  <span class="title playlist-title">Title</span>
-                  <p>Description</p>
-                  <a href="#!" class="secondary-content" id="remove"><i class="material-icons">clear</i></a>
-                </li>
-            </ul>       
-        <!--Create Playlist Page Link-->
-        <div class="row">
-            <div class="col s12 m6 l3" onclick="window.location.href='newplaylist.html'"><a class="waves-effect waves-light btn-large">Create New Playlist</a></div>
-            <div class="col s12 m6 l3"><a class="waves-effect waves-light btn-large modal-trigger" href="#modal1" id="clear-all">Clear All</a></div>
-        </div>
-         <!-- Modal Structure -->
-  <div id="modal1" class="modal ">
-    <div class="modal-content">
-      <h5>Confirmation</h5>
-      <p>Are you sure you want to delete all playlists? You will not be able to undo this. </p>
-    </div>
-    <div class="modal-footer row">
-      <div class="col s12 m6 l3"><a href="#!" class="modal-close waves-effect waves-green btn-large" id="modal-yes">Yes</a></div>
-      <div class="col s12 m6 l3"><a href="#!" class="modal-close waves-effect waves-green btn-large modal-close">Cancel</a></div>
     </div>
   </div>
-    </main>
-    <!--Links to Javascript-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/main.js"></script>    
-  
+  <!--Dropdown Menu & Title-->
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">My Cool Playlist</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="index.html">My Playlists</a></li>
+          <li><a href="newplaylist.html">Create New Playlist</a></li>
+        </ul>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="index.html">My Playlists</a></li>
+      <li><a href="newplaylist.html">Create New Playlist</a></li>
+    </ul>
+
+  </header>
+  <!--"Main" div for formatting-->
+  <main class="col s12">
+    <br><br>
+    <!--Add new playlist link-->
+    <div class="new-playlist">
+      <i class="material-icons circle red">add</i>
+      <span class="title playlist-title">Title</span>
+    </div>
+    <!--List of Saved Playlists-->
+    <br><br>
+    <ul class="collection">
+      <li class="collection-item avatar">
+        <i class="material-icons circle red">play_arrow</i>
+        <span class="title playlist-title">Title</span>
+        <p>Description</p>
+        <a href="#!" class="secondary-content" id="remove"><i class="material-icons">clear</i></a>
+      </li>
+    </ul>
+    <!--Clear All button-->
+    <div class="row">
+      
+      <div class="col s12 m6 l3"><a class="waves-effect waves-light btn-large modal-trigger" href="#modal1"
+          id="clear-all">Clear All</a></div>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal ">
+      <div class="modal-content">
+        <h5>Confirmation</h5>
+        <p>Are you sure you want to delete all playlists? You will not be able to undo this. </p>
+      </div>
+      <div class="modal-footer row">
+        <div class="col s12 m6 l3"><a href="#!" class="modal-close waves-effect waves-green btn-large"
+            id="modal-yes">Yes</a></div>
+        <div class="col s12 m6 l3"><a href="#!"
+            class="modal-close waves-effect waves-green btn-large modal-close">Cancel</a></div>
+      </div>
+    </div>
+  </main>
+  <!--Links to Javascript-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/main.js"></script>
+
+  </script>
 </body>
 
 </html>
