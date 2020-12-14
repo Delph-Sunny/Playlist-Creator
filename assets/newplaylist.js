@@ -29,7 +29,7 @@ $("#create-playlist").on("click", function (event) {
         newList.description = newDescription.trim();
     }
 /* Broken
-    var newIcon = $( "selectdropdown1 option:checked" ).val();
+    var newIcon = $('#dropdown1').dropdown();
     if (newIcon != "") {
         newList.icon = "music_video" // Default icon
     }
