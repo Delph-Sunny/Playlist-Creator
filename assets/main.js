@@ -5,12 +5,13 @@ $(document).ready(function () {
 
     /* Splash Screen animation timer */
     var timer1 = setInterval(function () {
-        $("#splash").style.opacity = "0";
+        $("#splash").css("opacity","0");
         var timer2 = setInterval(function () {
-            $("#splash").style.display = "none";
+            $("#splash").css("display","none");
         }, 810);
     }, 2500);
 
+   
     /***************FOR TESTING**********************/
     userList = [
         {
