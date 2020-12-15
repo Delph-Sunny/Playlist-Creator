@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cool Playlist</title>
-    
+
     <!--Links to CSS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"/>
-    <link rel="stylesheet" href="assets/style.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
+
     <!--Dropdown Menu & Title-->
     <header>
         <!--Placeholder for title-->
@@ -24,21 +24,40 @@
     <!--"Main" div for formatting-->
     <main>
 
-        <ul class="collection">
-            <li class="collection-item avatar">
-              <img src="images/yuna.jpg" alt="" class="circle">
-              <span class="title">Title</span>
-              <p>First Line <br>
-                 Second Line
-              </p>
-              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-        </ul>
+        <div class="song-list">
+            <!-- Example song List -->
+            <div class="row" data-name="yellow" data-index="1">
+                <div class="flex-container">
+                    <div>
+                        <img class="image" src="assets/images/missing-thumbnail.png">
+                    </div>
+                    <div class="details">
+                        <h4>Title:</h4>
+                        <p>Artist:</p>
+                        <p>Album:</p>
+                        <a href='#' target='_blank'>Watch on YouTube</a>
+                    </div>
+                    <div class="position-right">
+                        <a class="btn-floating btn-large waves-effect waves-light" id="remove"><i
+                                class="material-icons">remove</i></a>
+                    </div>
+                </div>
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">queue_music</i>View Lyrics</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
     </main>
-    
+
     <!--Links to Javascript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/playlistview.js"></script>
+
 </body>
+
 </html>
