@@ -23,10 +23,10 @@ $("#create-playlist").on("click", function (event) {
     }
     var newDescription = $("#input_text2").val()
     if (newDescription != "") {
-        newList.description = ""
+        newList.description = newDescription.trim();
     }
     else {
-        newList.description = newDescription.trim();
+        newList.description = "";
     }
 /* Broken
     var newIcon = $('#dropdown1').dropdown();
