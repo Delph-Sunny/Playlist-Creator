@@ -59,7 +59,7 @@ body {
 }
 
 .collection .collection-item, .modal {
-    background-color: #213D3D; 
+    background-color: #01103F; 
 }
 
 /*Collapsable Design*/
@@ -93,6 +93,15 @@ body {
 }
 .stretch {
    width: 200px;
+}
+
+.play-btn {
+    background-color: #F14406 !important;
+    margin-top: 8px;
+}
+
+.btn-margin {
+     margin-right: 3%;
 }
 
 
