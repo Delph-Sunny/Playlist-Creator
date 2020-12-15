@@ -49,10 +49,10 @@ $(document).ready(function () {
 
     /*** Building the playlist list if any ***/
     function playlistBuild() {
-        $(".collection").empty(); // To avoid repeated elements 
+        $(".playlists-list").empty(); // To avoid repeated elements 
         // Looping through the array of playlists
         for (let i = 0; i < userList.length; i++) {
-            var playlistEl = $(`<li class="collection-item avatar">`);
+            var playlistEl = $(`<li class="collection-item avatar my-playlist">`);
             // Adding attributes and children with text
             playlistEl.attr("data-name", userList[i].playlistName);
             playlistEl.attr("data-index", i);
@@ -60,14 +60,14 @@ $(document).ready(function () {
             <span class="title playlist-title">${userList[i].playlistName}</span>
             <p>${userList[i].description}</p>
             <a href="#!" class="secondary-content" id="remove" data-index="${i}"><i class="material-icons">clear</i></a>`)
-            $(".collection").append(playlistEl);
+            $(".playlists-list").append(playlistEl);
         };
     };
 
     playlistBuild();
 
     // when clicking on a playlist button
-    $(document).on("click", ".collection-item", function (event) {
+    $(document).on("click", ".my-playlist", function (event) {
         event.preventDefault();
         userChoice = ($(this).data("index"));
         localStorage.setItem("index", JSON.stringify(userChoice));
@@ -80,10 +80,10 @@ $(document).ready(function () {
         localStorage.clear();
         /* Disable btn once used */
         $(this).disabled = "true";
-        $(".collection").empty()
+        $(".playlists-list").empty()
     });
 
-    // for remove 1 playlist at the time
+    // Remove 1 playlist at the time
     $(document).on("click", "#remove", function (event) {
         event.stopPropagation();
         let i = $(this).data("index");
