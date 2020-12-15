@@ -49,14 +49,16 @@
   <main class="col s12">
     <br><br>
     <!--Add new playlist link-->
-    <div class="new-playlist">
+    <ul class="collection">
+      <li class="collection-item avatar new-playlist">
       <i class="material-icons circle red">add</i>
-      <span class="title playlist-title">Title</span>
-    </div>
+      <h5>New Playlist</h5>
+    </li>
+  </ul>
     <!--List of Saved Playlists-->
     <br><br>
-    <ul class="collection">
-      <li class="collection-item avatar">
+    <ul class="collection playlists-list">
+      <li class="collection-item avatar my-playlist">
         <i class="material-icons circle red">play_arrow</i>
         <span class="title playlist-title">Title</span>
         <p>Description</p>
@@ -87,8 +89,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="assets/main.js"></script>
-
-  </script>
 </body>
 
 </html>
