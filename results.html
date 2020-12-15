@@ -6,6 +6,7 @@
     <title>Search Results</title>
     
     <!--Links to CSS-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link
     rel="stylesheet"
@@ -17,27 +18,83 @@
 <body>
     <!--Dropdown Menu & Title-->
     <header>
-        <!--Placeholder for title-->
-        <div class="playlist-title">Playlist Name</div>
-        <button class="playlist-link">See my Playlist</button>
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo playlist-title">Playlist Name</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down"></ul>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">My Playlists</a></li>
+                <li><a href="newplaylist.html">Create New Playlist</a></li>
+              </ul>
+            </div>
+          </nav>
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">My Playlists</a></li>
+            <li><a href="newplaylist.html">Create New Playlist</a></li>
+          </ul>   
+     
+        <a class="waves-effect waves-light btn right playlist-link">See My Playlist</a>
     </header>
     <!--"Main" div for formatting-->
     <main>
         <!--Search Bars-->
-        <form id="search-form">
+        <div class="row">
+            <form class="col s12 search-form">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="input_text" type="text" name="title">
+                  <label for="input_text songtitle">Song</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="input_text" type="text" name="artist">
+                  <label for="input_text artist">Artist</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s6">
+                    <a type="submit" value= "Submit" class="waves-effect waves-light btn stretch">Submit</a>
+                    <a id="clear-results" class="waves-effect waves-light btn stretch">Clear</a>
+                </div>
+               </div>
+            </form>
+        </div>    
+        <!-- <form id="search-form">
             <label for="songtitle">Song Title</label><br>
             <input type="text" id="title" name="title"><br>
             <label for="artist">Artist</label><br>
             <input type="artist" id="artist" name="artist"><br>
             <input type="submit" value="Submit">
-        </form>
-        <!--Results (to be emptied and re-populated)-->
+        </form> -->
+        <!--Clear Results Button-->
+        <!-- <button id="clear-results">Clear All Results</button> -->
+        <!--Results (populated by JS)-->
         <div class="song-list" id="results">
-            <!--Album Thumbnail-->
-            <!--Title-->
-            <!--Artist-->
-            <!--YouTube Link-->
-            <!--Add to Playlist button-->
+            <!-- Example Result -->
+            <div class="result row">
+                <div class="flex-container">
+                    <div>
+                        <img class="image" src="assets/images/missing-thumbnail.png"> 
+                    </div>
+                    <div class="details">
+                        <h4>Title:</h4>
+                        <p>Artist:</p>
+                        <p>Album:</p>
+                        <a href='#' target='_blank'>Watch on YouTube</a>
+                    </div>
+                    <div class="position-right">                      
+                        <a class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>         
+                    </div>
+                </div>
+                <ul class="collapsible">
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">queue_music</i>View Lyrics</div>
+                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+            </div>
+
         </div>
 
     </main> 
