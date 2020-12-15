@@ -41,8 +41,9 @@ body {
 
 
 
+
 /*Media Queries*/
-/*@media only screen and (min-width: 993px) {
+@media only screen and (min-width: 993px) {
 
     .btn-large {
         margin-left: 10px;
@@ -72,8 +73,6 @@ body {
 /*Button Design*/
 .btn-large {
     background-color: #F14406 !important;
-    width: 100%;
-    text-align: center;
     text-transform: none;
 }
 
@@ -103,6 +102,7 @@ body {
 .btn-margin {
      margin-right: 3%;
 }
+
 
 
 
