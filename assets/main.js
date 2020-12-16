@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    /*Splash screen*/
+    /*** Splash screen ***/
     //display only once per session
     if (sessionStorage.getItem('splash') !== 'true') {
         $('#splash').show()
@@ -22,35 +22,6 @@ $(document).ready(function () {
     var userChoice = 0;
     var userList = JSON.parse(localStorage.getItem("playlistsList")) || [];
     $('.modal').modal();
-
-    /***************FOR TESTING**********************/
-   /* userList = [
-        {
-            index: 0,
-            playlistName: "My running",
-            description: "for Saturday workout",
-            icon: "play_arrow",
-            iconColor: "deep-orange lighten-3",
-        },
-        {
-            index: 1,
-            playlistName: "My second playlist",
-            description: "for Sunday workout",
-            icon: "android",
-            iconColor: "light-green lighten-2",
-        }
-        ,
-        {
-            index: 2,
-            playlistName: "My third playlist",
-            description: "for week workout",
-            icon: "beach_access",
-            iconColor: "cyan",
-        }
-    ]
-    localStorage.setItem("playlistsList", JSON.stringify(userList));*/
-    /********************************************/
-
 
     // when clicking on New playlist button
     $(document).on("click", ".new-playlist", function (event) {
@@ -87,7 +58,7 @@ $(document).ready(function () {
 
     // Hide Clear All button if no playlist
     if (userList.length == 0) {
-       $("#clear-all").hide();
+        $("#clear-all").hide();
     }
 
     // for Clear All button after confirmation with the modal
@@ -96,6 +67,7 @@ $(document).ready(function () {
         localStorage.clear();
         // Hide Clear All btn once used 
         $("#clear-all").hide();
+
         $(".playlists-list").empty()
     });
 
