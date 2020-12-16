@@ -1,9 +1,13 @@
 $(document).ready(function () {
-    var userChoice = 0;
-    var userList = JSON.parse(localStorage.getItem("playlistsList")) || [];
-    $('.modal').modal();
-
-    /* Splash Screen animation timer */
+    /*Splash screen*/
+    //display only once per session
+    if (sessionStorage.getItem('splash') !== 'true') {
+        $('#splash').show()
+        sessionStorage.setItem('splash', 'true');
+    } else {
+        $('#splash').hide();
+    }
+    // Splash Screen animation timer
     var timer1 = setInterval(function () {
         $("#splash").css("opacity", "0");
         var timer2 = setInterval(function () {
@@ -11,6 +15,10 @@ $(document).ready(function () {
         }, 810);
     }, 2500);
 
+
+    var userChoice = 0;
+    var userList = JSON.parse(localStorage.getItem("playlistsList")) || [];
+    $('.modal').modal();
 
     /***************FOR TESTING**********************/
     userList = [
