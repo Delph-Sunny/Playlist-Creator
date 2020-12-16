@@ -2,7 +2,8 @@ $(document).ready(function () {   // if using modal, need to load the document
     var listIndex = JSON.parse(localStorage.getItem("index"));
     var userList = JSON.parse(localStorage.getItem("playlistsList"));
     var activePlaylist = userList[listIndex];
-    
+    var songList = activePlaylist['songs'] || [];
+
     /* initialize modal or toast for the page */
     //$('.modal').modal();   // if we use the modal
     M.AutoInit();  // if using toast
@@ -33,72 +34,64 @@ $(document).ready(function () {   // if using modal, need to load the document
     }
 
     function displayResults(response, title, artist, lyrics) {
+        // Get data from response
         var song = response.track[0];
-        console.log(song); // Delete Later
-        var titleId = toLowerCaseNoSpaces(title);
 
-        // Create Elements
         var thumb = song.strTrackThumb;
         if (thumb === null) {
             thumb = "assets/images/missing-thumbnail.png"
         }
-        var result = $(`<div class='result' id='result-${titleId}'></div>`)
-        var albumThumbnail = $(`<img src=${thumb}>`);
-        var songTitle = $(`<p>Title: ${title}</p>`);
-        var songArtist = $(`<p>Artist: ${artist}</p>`);
-        var songAlbum = $(`<p>Album: ${song.strAlbum}</p>`);
+
         var youtubeLink = song.strMusicVid;
-        // If no link, create link to a youtube search with the song's title and artist
         if (youtubeLink === null) {
             var searchTitle = searchString(title);
             var searchArtist = searchString(artist);
             var query = searchTitle + "+" + searchArtist;
             youtubeLink = `https://www.youtube.com/results?search_query=${query}`;
         }
-        var youtubeLinkEl = $(`<a href=${youtubeLink} target='_blank'>Watch on YouTube</a>`);
-        var addButton = $(`<button class='add-to-playlist'>Add to Playlist</button>`);
 
-        // Event Listener - Add this result to current playlist
-        $(document).on("click", ".add-to-playlist", function (event) {
+        // Append
+        var resultsList = $("#results"); // parent
+
+        var result = $(`<div class="result row">`);
+        var flex = $(`<div class="flex-container">`);
+        var image = $(`<div><img class="image" width="200px" src=${thumb}></div>`);
+        var songData = $(`<div class="details"><h4>${title}</h4><p>Artist: ${artist}</p><p>Album: ${song.strAlbum}</p><a href= ${youtubeLink} target='_blank'>Watch on YouTube</a></div>`);
+        var addDiv = $(`<div class="position-right"></div>`);
+        
+        // Add to playlist Button
+        var addButton = $(`<a class="btn-floating btn-large waves-effect waves-light add-to-playlist"><i class="material-icons">add</i></a>`).click(function(event){
             var songData = {                    // create an object with all data
                 title: title,
                 artist: artist,
                 album: song.strAlbum,
                 thumbnail: thumb,
-                link: youtubeLink
+                link: youtubeLink,
+                lyrics: lyrics
             };
-            var songList= [];         
+
             songList.push(songData);  // push song object into array of songs 
-            activePlaylist['songs']= songList; // add array to active playlist
+            activePlaylist['songs'] = songList; // add array to active playlist
 
-            localStorage.setItem("playlistsList", JSON.stringify(activePlaylist)); // store       
-        });
+            localStorage.setItem("playlistsList", JSON.stringify(activePlaylist)); // store    
+        })
 
-        var removeResultButton = $(`<button class='remove-result'>Remove Result</button>`);
-        // Event Listener - Remove this result
-        removeResultButton.click(function () {
-            $(`#result-${titleId}`).remove();
-        });
-        var lyricsEl = $(`<p class='lyrics'>${lyrics}</p>`);
+        var collapsible = $(`<ul class="collapsible">`);
+        var li = $(`<li>`);
+        var collapsibleHeader = $(`<div class="collapsible-header"><i class="material-icons">queue_music</i>View Lyrics</div>`);
+        var collapsibleBody = $(`<div class="collapsible-body"><pre>${lyrics}</pre></div>`);
 
-        // Append Elements
-        var resultsDiv = $("#results");
-        result.append(albumThumbnail);
-        result.append(songTitle);
-        result.append(songArtist);
-        result.append(songAlbum);
-        result.append(youtubeLinkEl);
-        result.append(addButton);
-        result.append(removeResultButton);
-        result.append(lyricsEl);
-        resultsDiv.append(result);
-    }
-
-    // Returns lowercase string with no spaces
-    function toLowerCaseNoSpaces(string) {
-        string = string.toLowerCase();
-        string = string.replaceAll(" ", "");
-        return string;
+        li.append(collapsibleHeader);
+        li.append(collapsibleBody);
+        collapsible.append(li);
+        flex.append(image);
+        flex.append(songData);
+        addDiv.append(addButton);
+        flex.append(addDiv);
+        result.append(flex);
+        result.append(collapsible);
+        resultsList.append(result);
+        M.AutoInit();
     }
 
     // Returns string with first letter of each word capitalized
@@ -124,10 +117,10 @@ $(document).ready(function () {   // if using modal, need to load the document
     }
 
     // Event listener - Submit API call
-    $("#search-form").submit(function (event) {
+    $("form").submit(function (event) {
         event.preventDefault();
-        var title = $("#title")[0].value;
-        var artist = $("#artist")[0].value;
+        var title = $(".title")[0].value;
+        var artist = $(".artist")[0].value;
         calls(title, artist);
     })
 
