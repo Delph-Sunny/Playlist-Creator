@@ -7,6 +7,9 @@ $(document).ready(function () {
     } else {
         $('#splash').hide();
     }
+
+    $('.home-page').show();         // Show home page by defaut hidden
+
     // Splash Screen animation timer
     var timer1 = setInterval(function () {
         $("#splash").css("opacity", "0");
