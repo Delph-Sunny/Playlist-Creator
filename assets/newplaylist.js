@@ -4,7 +4,7 @@ var newList = {};
 var newIndex;
 var newIcon, newColor;
 
-// Getting the the new index for the new playlist
+// Getting the index for the new playlist
 if (userList.length == 0) {
     newIndex = 0;
 } else {
@@ -13,26 +13,17 @@ if (userList.length == 0) {
 
 
 // Dropdown listeners
-$('#dropdown1').click(e => {  
+$('#dropdown1').click(e => {
     newIcon = e.target.firstChild.textContent;
-    if (typeof newIcon  == "undefined") {
-        newIcon = "music_video" // Default icon
-    }
-    console.log(newIcon)
 })
 
-$('#dropdown2').click(e => {   
-    console.log(e.target.firstChild.textContent)       // FOR TESTING
+$('#dropdown2').click(e => {
     newColor = e.target.firstChild.textContent;
-    if (typeof newColor  == "undefined") {
-        newColor = "orange"  // Default color for icon background
-    }
 })
 
 
 // Create new playlist
 $("#forward").click(e => {
-    console.log(newIcon + "," + newColor)
     e.preventDefault();
     var newName = $("#input_text").val();
     // Mandatory field for name
@@ -54,13 +45,25 @@ $("#forward").click(e => {
         newList.description = "";
     }
 
+    // Set default values for avatar
+    if (!newIcon) {
+        newIcon = "music_video" // Default icon
+    }
+
+    if (!newColor) {
+        newColor = "orange"  // Default color for icon background
+    }
+
+
     newList.icon = newIcon;
     newList.iconColor = newColor;
+
     // Populate array and store locally
+    console.log("worked")
     userList.push(newList);
     localStorage.setItem("playlistsList", JSON.stringify(userList));
     localStorage.setItem("index", JSON.stringify(newIndex));
-   // window.location.href = "results.html" // send to add songs page
+    window.location.href = "results.html" // send to add songs page
 })
 
 $("#back").click(e => {
