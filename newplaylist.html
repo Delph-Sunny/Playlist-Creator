@@ -45,10 +45,10 @@
             
         </div>
         <!--Text Boxes for creating new playlist-->
-        <div class="row center-div">
+        <div class="row">
             <form class="col s12">
               <div class="row">
-                <div class="input-field col s7">
+                <div class="input-field col s8 offset-s2">
                   <input id="input_text" type="text" data-length="10">
                   <label for="input_text">Playlist Name</label>
                   <div style="position: relative">
@@ -57,17 +57,20 @@
                 </div>
               </div>
               <div class="row">
-                <div class="input-field col s7">
+                <div class="input-field col s8 offset-s2">
                     <input id="input_text2" type="text" data-length="80">
                   <label for="input_text2">Description</label>
                 </div>
               </div>
             </form>
-             <!-- Icon Dropdown Trigger -->
+
+        <!-- Icon Dropdown Trigger -->
+        <div class="row">  
+          <div class="col s8 offset-s2">
             <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Choose Icon <i class="large material-icons"> 
               arrow_drop_down 
           </i></a>
-
+  
             <!-- Icon Dropdown Structure -->
             <ul id='dropdown1' class='dropdown-content'>
               <li><a href="#!"><i class="material-icons black white-text">play_arrow</i></a></li>
@@ -81,9 +84,8 @@
             </ul>
             <!-- Color Dropdown Trigger -->
             <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Choose Color <i class="large material-icons"> 
-              arrow_drop_down 
-          </i></a>
-
+              arrow_drop_down</i></a>
+  
             <!-- Color Dropdown Structure -->
             <ul id='dropdown2' class='dropdown-content'>
               <li><a href="#!"class="grey-text">grey</a></li>
@@ -95,12 +97,15 @@
               <li><a href="#!"class="teal-text">teal</a></li>
               <li><a href="#!"class="orange-text">orange</a></li>
             </ul>
-          </div>   
-        
+          </div>
+        </div>   
+        <br><br>
         <!--Create new playlist button-->
         <div class="add-songs row" id="create-playlist">
-            <div><a class="col s10 offset-s1 m8 offset-m2 l4 offset-l4 col waves-effect waves-light btn-large">Create Playlist</a></div>
+            <a id="back" class="col s4 offset-s2 m4 offset-m2 l2 offset-l4 waves-effect waves-light btn-large"><i class="material-icons left">arrow_back</i>Back</a>
+            <a id="forward" class="col s4 m4 l2 waves-effect waves-light btn-large"><i class="material-icons right">arrow_forward</i>Next</a>
         </div>
+
     </main>
     <!--Links to Javascript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
