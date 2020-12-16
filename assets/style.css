@@ -41,8 +41,9 @@ body {
 
 
 
+
 /*Media Queries*/
-/*@media only screen and (min-width: 993px) {
+@media only screen and (min-width: 993px) {
 
     .btn-large {
         margin-left: 10px;
@@ -59,7 +60,7 @@ body {
 }
 
 .collection .collection-item, .modal {
-    background-color: #213D3D; 
+    background-color: #01103F; 
 }
 
 /*Collapsable Design*/
@@ -72,8 +73,6 @@ body {
 /*Button Design*/
 .btn-large {
     background-color: #F14406 !important;
-    width: 100%;
-    text-align: center;
     text-transform: none;
 }
 
@@ -94,6 +93,16 @@ body {
 .stretch {
    width: 200px;
 }
+
+.play-btn {
+    background-color: #F14406 !important;
+    margin-top: 8px;
+}
+
+.btn-margin {
+     margin-right: 3%;
+}
+
 
 
 

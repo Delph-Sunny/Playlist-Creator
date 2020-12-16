@@ -18,8 +18,21 @@
 <body>
     <!--Dropdown Menu & Title-->
     <header>
-        <!--Placeholder for title-->
-        <div class="title center">My Cool Playlist</div>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">My Cool Playlist</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="index.html">My Playlists</a></li>
+            <li><a href="newplaylist.html">Create New Playlist</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">My Playlists</a></li>
+        <li><a href="newplaylist.html">Create New Playlist</a></li>
+      </ul>
+  
     </header>
     <!--"Main" div for formatting-->
     <main class="col s12">
@@ -85,8 +98,8 @@
           </div>   
         
         <!--Create new playlist button-->
-        <div class="add-songs center" id="create-playlist">
-            <div><a class="waves-effect waves-light btn-large">Create Playlist</a></div>
+        <div class="add-songs row" id="create-playlist">
+            <div><a class="col s10 offset-s1 m8 offset-m2 l4 offset-l4 col waves-effect waves-light btn-large">Create Playlist</a></div>
         </div>
     </main>
     <!--Links to Javascript-->
