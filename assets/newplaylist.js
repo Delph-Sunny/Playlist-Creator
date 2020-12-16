@@ -33,7 +33,6 @@ $("#forward").click(e => {
     }
     else {
         M.toast({ html: `Ooops! <br> Your forgot to enter a playlist name.`, classes: 'rounded' })
-        // $(".helper-text").text("Ooops! Your forgot to enter a playlist name", 4000);
         return;
     }
 
@@ -59,7 +58,6 @@ $("#forward").click(e => {
     newList.iconColor = newColor;
 
     // Populate array and store locally
-    console.log("worked")
     userList.push(newList);
     localStorage.setItem("playlistsList", JSON.stringify(userList));
     localStorage.setItem("index", JSON.stringify(newIndex));
