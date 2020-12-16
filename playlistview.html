@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cool Playlist</title>
+
+    <!--Links to CSS-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+
+    <!--Dropdown Menu & Title-->
+    <header>
+        <!-- Placeholder for title-->      
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo playlist-title">Playlist Name</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down"></ul>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">My Playlists</a></li>
+                <li><a href="newplaylist.html">Create New Playlist</a></li>
+              </ul>
+            </div>
+          </nav>
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">My Playlists</a></li>
+            <li><a href="newplaylist.html">Create New Playlist</a></li>
+          </ul>   
+     
+        <a class="waves-effect waves-light btn right playlist-link">See My Playlist</a>
+    </header>
+    <!--"Main" div for formatting-->
+    <main>
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">queue_music</i>View Lyrics</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
+
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header song-collapsible">
+                     Song Title 
+                </div>
+                <div class="collapsible-body">
+                    <div class="song-list">
+                        <!-- Example song List -->
+                        <div class="row" data-name="yellow" data-index="1">
+                            <div class="flex-container" href='#' target='_blank' onclick="location.href='https://www.google.com/';">
+                                <div>
+                                    <img class="image" src="assets/images/missing-thumbnail.png">
+                                </div>
+                                <div class="details" onclick="location.href='https:google.com';">
+                                    <h4>Title:</h4>
+                                    <p>Artist:</p>
+                                    <p>Album:</p>
+                                    <a href='#' target='_blank'></a>
+                                </div>
+                                <div class="position-right">
+                                    <a class="btn-floating btn-large waves-effect waves-light" id="remove"><i
+                                            class="material-icons">remove</i></a>
+                                </div>
+                            </div>
+            
+                        </div>
+            
+                    </div>
+                </div>
+            </li>
+
+    </main>
+
+    <!--Links to Javascript-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/playlistview.js"></script>
+
+</body>
+
+</html>
