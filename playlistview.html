@@ -16,26 +16,65 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <!--Dropdown Menu & Title-->
     <header>
         <!--Placeholder for title-->
-        <div class="playlist-title">Playlist Name</div>
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo playlist-title">Playlist Name</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down"></ul>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">My Playlists</a></li>
+                <li><a href="newplaylist.html">Create New Playlist</a></li>
+              </ul>
+            </div>
+          </nav>
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">My Playlists</a></li>
+            <li><a href="newplaylist.html">Create New Playlist</a></li>
+
+        </ul>   
+     
+        <a class="waves-effect waves-light btn right playlist-link">See My Playlist</a>
     </header>
     <!--"Main" div for formatting-->
     <main>
+        
+        <!-- empty div for player --> 
+        <div>
 
-        <ul class="collection">
-            <li class="collection-item avatar">
-              <img src="images/yuna.jpg" alt="" class="circle">
-              <span class="title">Title</span>
-              <p>First Line <br>
-                 Second Line
-              </p>
-              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-        </ul>
+        </div>  
+        
+        
+        
+        <!-- LYRICS VIEW -->
+        <div>
+        
+            <ul class="collapsible">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">filter_drama</i>LYRICS</div>
+                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+            </ul>
+
+        </div>        
+        
+        
+        
+        <div>
+            <ul class="collection">
+                <li class="collection-item avatar">
+                <img src="images/yuna.jpg" alt="" class="circle">
+                <span class="title">Title</span>
+                <p>Song title <br>
+                     Song artist
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+            </ul>
+        </div>
+     
     </main>
-    
     <!--Links to Javascript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
