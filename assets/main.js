@@ -24,7 +24,7 @@ $(document).ready(function () {
     $('.modal').modal();
 
     /***************FOR TESTING**********************/
-    userList = [
+   /* userList = [
         {
             index: 0,
             playlistName: "My running",
@@ -48,7 +48,7 @@ $(document).ready(function () {
             iconColor: "cyan",
         }
     ]
-    localStorage.setItem("playlistsList", JSON.stringify(userList));
+    localStorage.setItem("playlistsList", JSON.stringify(userList));*/
     /********************************************/
 
 
@@ -85,12 +85,17 @@ $(document).ready(function () {
         window.location.href = "playlistview.html";
     });
 
+    // Disable Clear All button if no playlist
+    if (userList.length == 0) {
+       $("#clear-all").attr("disabled", true);
+    }
+
     // for Clear All button after confirmation with the modal
     $("#modal-yes").on("click", function (event) {
         userList = [];
         localStorage.clear();
-        /* Disable btn once used */
-        $(this).disabled = "true";
+        /* Disable Clear All btn once used */
+        $("#clear-all").attr("disabled", true);
         $(".playlists-list").empty()
     });
 
