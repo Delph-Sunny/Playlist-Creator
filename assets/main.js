@@ -85,17 +85,17 @@ $(document).ready(function () {
         window.location.href = "playlistview.html";
     });
 
-    // Disable Clear All button if no playlist
+    // Hide Clear All button if no playlist
     if (userList.length == 0) {
-       $("#clear-all").attr("disabled", true);
+       $("#clear-all").hide();
     }
 
     // for Clear All button after confirmation with the modal
     $("#modal-yes").on("click", function (event) {
         userList = [];
         localStorage.clear();
-        /* Disable Clear All btn once used */
-        $("#clear-all").attr("disabled", true);
+        // Hide Clear All btn once used 
+        $("#clear-all").hide();
         $(".playlists-list").empty()
     });
 
