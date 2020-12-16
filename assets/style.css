@@ -52,10 +52,6 @@ body {
     right: 15px;
 }
 
-/* DropDowns */
-.dropdown-content li {
-    background-color: var(--bckgrd); 
-}
 
 /*Media Queries*/
 @media only screen and (min-width: 993px) {
@@ -65,7 +61,7 @@ body {
     }
 }
 
-/*Nav Bar Design*/
+/*Nav Bar*/
 .nav-wrapper {
     background-color: var(--navbckgrnd);
     padding-left: 1%;
@@ -78,12 +74,21 @@ body {
 .collection .collection-item, .modal {
     background-color: var(--listbckgrnd); 
 }
+nav .brand-logo {
+    font-size: 20px;
+}
 
-/*Collapsable Design*/
+/*Collapsable*/
 
 .collapsible-header {
     background-color: var(--listbckgrnd);
     
+}
+
+/*Dropdown Content*/
+
+.dropdown-content li {
+    background-color: #000505;   
 }
 
 /* Song collapsibles */
@@ -91,7 +96,7 @@ body {
 
 
 
-/*Button Design*/
+/*Buttons*/
 .btn-large {
     background-color: var(--orangeb4) !important;
     text-transform: none;
@@ -202,7 +207,7 @@ body {
     background-size: cover;
 }
 .fadedcolor {
-    background: linear-gradient(to bottom right, rgba(235, 128, 7, 0.555),rgba(6, 2, 41, 0.719), rgba(241, 14, 203, 0.596));
+    background: linear-gradient(to bottom right, rgba(2, 0, 22, 0.514),rgba(4, 2, 85, 0.459), rgba(238, 130, 6, 0.603));
     height: 100%; 
     width: 100%;
 }

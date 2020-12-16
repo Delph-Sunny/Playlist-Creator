@@ -16,45 +16,33 @@
 
 
 <body>
-  <!--Dropdown Menu & Title-->
-  <header>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">My Cool Playlist</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="index.html">My Playlists</a></li>
-          <li><a href="newplaylist.html">Create New Playlist</a></li>
-        </ul>
-      </div>
-    </nav>
-    <ul class="sidenav" id="mobile-demo">
-      <li><a href="index.html">My Playlists</a></li>
-      <li><a href="newplaylist.html">Create New Playlist</a></li>
-    </ul>
-
-  </header>
-  <!--"Main" div for formatting-->
-  <main>
-    <!--Welcome Message for new users?-->
-    <div class="message center" id="welcome-new">
-      Welcome! Please enter a name and description for your first playlist!
-    </div>
-    <!--Message for current users?-->
-    <div class="message center" id="welcome-user">
-
-    </div>
-    <!--Text Boxes for creating new playlist-->
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s8 offset-s2">
-            <input id="input_text" type="text" data-length="10">
-            <label for="input_text">Playlist Name</label>
-            <div style="position: relative">
-              <div id="toast-container"></div>
-            </div>
-          </div>
+    <!--Dropdown Menu & Title-->
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">My Cool Playlist</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="index.html">My Playlists</a></li>
+            <li><a href="newplaylist.html">Create New Playlist</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">My Playlists</a></li>
+        <li><a href="newplaylist.html">Create New Playlist</a></li>
+      </ul>
+  
+    </header>
+    <!--"Main" div for formatting-->
+    <main class="col s12">
+        <!--Welcome Message for new users?-->
+        <div class="message center flow-text" id="welcome-new">
+            Welcome! Please enter a name and description for your first playlist!
+        </div>
+        <!--Message for current users?-->
+        <div class="message center" id="welcome-user">
+            
         </div>
         <div class="row">
           <div class="input-field col s8 offset-s2">
