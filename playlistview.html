@@ -18,42 +18,64 @@
 
     <!--Dropdown Menu & Title-->
     <header>
-        <!--Placeholder for title-->
-        <div class="playlist-title">Playlist Name</div>
+        <!-- Placeholder for title-->      
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo playlist-title">Playlist Name</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down"></ul>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">My Playlists</a></li>
+                <li><a href="newplaylist.html">Create New Playlist</a></li>
+              </ul>
+            </div>
+          </nav>
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">My Playlists</a></li>
+            <li><a href="newplaylist.html">Create New Playlist</a></li>
+          </ul>   
+     
+
     </header>
     <!--"Main" div for formatting-->
     <main>
+ 
 
-        <div class="song-list">
-            <!-- Example song List -->
-            <div class="row" data-name="yellow" data-index="1">
-                <div class="flex-container">
-                    <div>
-                        <img class="image" src="assets/images/missing-thumbnail.png">
-                    </div>
-                    <div class="details">
-                        <h4>Title:</h4>
-                        <p>Artist:</p>
-                        <p>Album:</p>
-                        <a href='#' target='_blank'>Watch on YouTube</a>
-                    </div>
-                    <div class="position-right">
-                        <a class="btn-floating btn-large waves-effect waves-light" id="remove"><i
-                                class="material-icons">remove</i></a>
+                    <div class="song-list">
+                        <!-- Example song List -->
+                        <div class="row" data-name="yellow" data-index="1">
+                            <div class="flex-container" href='#' target='_blank' onclick="location.href='https://www.google.com/';">
+                                <div>
+                                    <img class="image" src="assets/images/missing-thumbnail.png">
+                                </div>
+                                <div class="details" onclick="location.href='https:google.com';">
+                                    <h4>Title:</h4>
+                                    <p>Artist:</p>
+                                    <p>Album:</p>
+                                    <a href='#' target='_blank'></a>
+                                </div>
+                                <div class="position-right">
+                                    <a class="btn-floating btn-large waves-effect waves-light" id="remove"><i
+                                            class="material-icons">remove</i></a>
+                                </div>
+                            </div>
+                            <ul class="collapsible">
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">queue_music</i>View Lyrics</div>
+                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                </li>
+                            </ul>
+            
+                        </div>
+            
                     </div>
                 </div>
-                <ul class="collapsible">
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">queue_music</i>View Lyrics</div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                </ul>
-            </div>
+        
 
-        </div>
     </main>
 
     <!--Links to Javascript-->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/playlistview.js"></script>
