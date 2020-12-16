@@ -72,8 +72,8 @@ $(document).ready(function () {   // if using modal, need to load the document
 
             songList.push(songData);  // push song object into array of songs 
             activePlaylist['songs'] = songList; // add array to active playlist
-
-            localStorage.setItem("playlistsList", JSON.stringify(activePlaylist)); // store    
+            userList[listIndex] = activePlaylist; // Replace active playlist into array of playlists
+            localStorage.setItem("playlistsList", JSON.stringify(userList)); // store    
         })
 
         var collapsible = $(`<ul class="collapsible">`);

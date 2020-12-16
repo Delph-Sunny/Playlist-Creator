@@ -1,10 +1,25 @@
+/*Variables for color */
+:root {
+    --bckgrd:  #000505;
+    --textall: #fae6ff; 
+    --white: white;
+    --navbckgrnd:  #010824; 
+    --listbckgrnd: #01103F;
+    --orangeb4:#F14406;
+    --orangeafter: #f1a706;
+    --inputpink:#e63286;
+  }
+
 /*Formatting Page Elements*/
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #000505;
-    color: #fae6ff;
-    
+    background-color: var(--bckgrd);
+    color: var(--textall);   
 }
+.home-page {
+    display: none;
+}
+
 .center {
     text-align: center;
 }
@@ -40,10 +55,9 @@ body {
     right: 15px;
 }
 
+/* DropDowns */
 .dropdown-content li {
-    background-color: #000505;
- 
-   
+    background-color: var(--bckgrd); 
 }
 
 
@@ -104,7 +118,7 @@ h4 {
 
 /*Nav Bar Design*/
 .nav-wrapper {
-    background-color: #010824;
+    background-color: var(--navbckgrnd);
     padding-left: 1%;
 }
 
@@ -113,13 +127,13 @@ h4 {
 }
 
 .collection .collection-item, .modal {
-    background-color: #01103F; 
+    background-color: var(--listbckgrnd); 
 }
 
 /*Collapsable Design*/
 
 .collapsible-header {
-    background-color: #01103F;
+    background-color: var(--listbckgrnd);
     
 }
 
@@ -130,30 +144,30 @@ h4 {
 
 /*Button Design*/
 .btn-large {
-    background-color: #F14406 !important;
+    background-color: var(--orangeb4) !important;
     text-transform: none;
 }
 
 .btn-large:hover {
-    background-color: #f1a706 !important;
+    background-color: var(--orangeafter) !important;
 }
 
 .btn {
     text-transform: none;
-    background-color: #F14406 !important;
+    background-color: var(--orangeb4) !important;
     margin-top: 1%;
     margin-right: 1%;
 }
 
 .btn:hover {
-    background-color: #f1a706 !important;
+    background-color: var(--orangeafter) !important;
 }
 .stretch {
    width: 200px;
 }
 
 .play-btn {
-    background-color: #F14406 !important;
+    background-color: var(--orangeb4) !important;
     margin-top: 8px;
 }
 
@@ -172,30 +186,31 @@ h4 {
 
 /*Change input field text color*/
 .input-field [type=text] {
-    color: white;
+    color: var(--white);
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
-    color: #e63286 !important;
+    color: var(--inputpink) !important;
 }
 /* label underline focus color */
-  .input-field input[type=text]:focus {
-    border-bottom: 1px solid #e63286 !important;
-    box-shadow: 0 1px 0 0 #e63286 !important;
-  }
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid var(--inputpink) !important;
+    box-shadow: 0 1px 0 0 var(--inputpink) !important;
+}
 
 /* modal style */ 
 #modal1 {   
-    color: white;
+    color: var(--textall);
     max-width: 50%;
     height: auto;   
 }
 
 .modal-footer {
-    background-color: #213D3D !important;
+    background-color:var(--listbckgrnd) !important;
     padding-bottom: 1rem !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    text-align: center !important;
 }
 
 .modal .modal-content {
@@ -205,6 +220,10 @@ h4 {
 
 .modal-content>h5 {
   text-align: center;  
+}
+
+.modal-close {
+ min-width: 70% !important;
 }
 
 /*  Toast Style */
@@ -217,14 +236,14 @@ h4 {
 
 /* Splash Screen */
 .overlay {  
-    background-image:url('./images/lights.png');  
+    background-image:url('./images/splash.png');  
     height: 100%;
     width: 100%;
     position: fixed;
     z-index: 2;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: var(--bckgrd);
     overflow-x: hidden;
     transition: 0.5s;
     display: block;

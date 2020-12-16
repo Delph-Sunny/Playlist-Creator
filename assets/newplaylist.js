@@ -1,26 +1,41 @@
 M.AutoInit();
-// Enter New Playlist
-$("#create-playlist").on("click", function (event) {
-    event.preventDefault();
-    var userList = JSON.parse(localStorage.getItem("playlistsList")) || [];
-    var newList = {};
-    var newIndex;
+var userList = JSON.parse(localStorage.getItem("playlistsList")) || [];
+var newList = {};
+var newIndex;
+var newIcon, newColor;
+
+// Getting the index for the new playlist
+if (userList.length == 0) {
+    newIndex = 0;
+} else {
+    newIndex = userList.length;
+}
+
+
+// Dropdown listeners
+$('#dropdown1').click(e => {
+    newIcon = e.target.firstChild.textContent;
+})
+
+$('#dropdown2').click(e => {
+    newColor = e.target.firstChild.textContent;
+})
+
+
+// Create new playlist
+$("#forward").click(e => {
+    e.preventDefault();
     var newName = $("#input_text").val();
     // Mandatory field for name
     if (newName != "") {
-        if (userList.length == 0) {
-            newIndex = 0;
-        } else {
-            newIndex = userList.length;
-        }
         newList.index = newIndex
         newList.playlistName = newName.trim();
     }
     else {
         M.toast({ html: `Ooops! <br> Your forgot to enter a playlist name.`, classes: 'rounded' })
-        // $(".helper-text").text("Ooops! Your forgot to enter a playlist name", 4000);
         return;
     }
+
     var newDescription = $("#input_text2").val()
     if (newDescription != "") {
         newList.description = newDescription.trim();
@@ -28,31 +43,29 @@ $("#create-playlist").on("click", function (event) {
     else {
         newList.description = "";
     }
-/* Broken
-    var newIcon = $('#dropdown1').dropdown();
-    if (newIcon != "") {
-        newList.icon = "music_video" // Default icon
-    }
-    else {
-        newList.icon = newIcon;
+
+    // Set default values for avatar
+    if (!newIcon) {
+        newIcon = "music_video" // Default icon
     }
 
-     
-    var newColor = $('#dropdown2').dropdown();
-    console.log(newColor)
-    if (newColor != "") {
-        newList.iconColor = "orange"  // Default color for icon background
+    if (!newColor) {
+        newColor = "orange"  // Default color for icon background
     }
-    else {
-        newList.iconColor = newColor;
-    }
-    */
-    userList.push(newList); 
+
+
+    newList.icon = newIcon;
+    newList.iconColor = newColor;
+
+    // Populate array and store locally
+    userList.push(newList);
     localStorage.setItem("playlistsList", JSON.stringify(userList));
     localStorage.setItem("index", JSON.stringify(newIndex));
-    window.location.href = "results.html"
+    window.location.href = "results.html" // send to add songs page
 })
 
-
+$("#back").click(e => {
+    window.location.href = "index.html"     // return to home page
+})
 
 

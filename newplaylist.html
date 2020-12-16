@@ -2,115 +2,117 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Playlist</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Playlist</title>
 
-    <!--Links to CSS-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/style.css" />
+  <!--Links to CSS-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 
 <body>
-    <!--Dropdown Menu & Title-->
-    <header>
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">My Cool Playlist</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="index.html">My Playlists</a></li>
-            <li><a href="newplaylist.html">Create New Playlist</a></li>
+  <!--Dropdown Menu & Title-->
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">My Cool Playlist</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="index.html">My Playlists</a></li>
+          <li><a href="newplaylist.html">Create New Playlist</a></li>
+        </ul>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="index.html">My Playlists</a></li>
+      <li><a href="newplaylist.html">Create New Playlist</a></li>
+    </ul>
+
+  </header>
+  <!--"Main" div for formatting-->
+  <main>
+    <!--Welcome Message for new users?-->
+    <div class="message center" id="welcome-new">
+      Welcome! Please enter a name and description for your first playlist!
+    </div>
+    <!--Message for current users?-->
+    <div class="message center" id="welcome-user">
+
+    </div>
+    <!--Text Boxes for creating new playlist-->
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s8 offset-s2">
+            <input id="input_text" type="text" data-length="10">
+            <label for="input_text">Playlist Name</label>
+            <div style="position: relative">
+              <div id="toast-container"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s8 offset-s2">
+            <input id="input_text2" type="text" data-length="80">
+            <label for="input_text2">Description</label>
+          </div>
+        </div>
+      </form>
+
+      <!-- Icon Dropdown Trigger -->
+      <div class="row">
+        <div class="col s8 offset-s2">
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Icon <i class="large material-icons">
+              arrow_drop_down
+            </i></a>
+
+          <!-- Icon Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!"><i class="material-icons black white-text">play_arrow</i></a></li>
+            <li><a href="#!"><i class="material-icons black white-text">star</i></a></li>
+            <li><a href="#!"><i class="material-icons black white-text">music_note</i></a></li>
+            <li><a href="#!"><i class="material-icons black white-text">headset</i></a></li>
+            <li><a href="#!"><i class="material-icons black white-text">tag_faces</i></a></li>
+            <li><a href="#!"><i class="material-icons black white-text">directions_run</i></a></li>
+            <li><a href="#!"><i class="material-icons black white-text">filter_vintage</i></a></li>
+            <li><a href="#!"><i class="material-icons black white-text">brightness_3</i></a></li>
+          </ul>
+          <!-- Color Dropdown Trigger -->
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Color <i class="large material-icons">
+              arrow_drop_down</i></a>
+
+          <!-- Color Dropdown Structure -->
+          <ul id='dropdown2' class='dropdown-content'>
+            <li><a href="#!" class="grey-text">grey</a></li>
+            <li><a href="#!" class="red-text">red</a></li>
+            <li><a href="#!" class="yellow-text">yellow</a></li>
+            <li><a href="#!" class="purple-text">purple</a></li>
+            <li><a href="#!" class="pink-text">pink</a></li>
+            <li><a href="#!" class="blue-text">blue</a></li>
+            <li><a href="#!" class="teal-text">teal</a></li>
+            <li><a href="#!" class="orange-text">orange</a></li>
           </ul>
         </div>
-      </nav>
-      <ul class="sidenav" id="mobile-demo">
-        <li><a href="index.html">My Playlists</a></li>
-        <li><a href="newplaylist.html">Create New Playlist</a></li>
-      </ul>
-  
-    </header>
-    <!--"Main" div for formatting-->
-    <main class="col s12">
-        <!--Welcome Message for new users?-->
-        <div class="message center" id="welcome-new">
-            Welcome! Please enter a name and description for your first playlist!
-        </div>
-        <!--Message for current users?-->
-        <div class="message center" id="welcome-user">
-            
-        </div>
-        <!--Text Boxes for creating new playlist-->
-        <div class="row">
-            <form class="col s12">
-              <div class="row">
-                <div class="input-field col s8 offset-s2">
-                  <input id="input_text" type="text" data-length="10">
-                  <label for="input_text">Playlist Name</label>
-                  <div style="position: relative">
-                    <div id="toast-container"></div>
-                </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <input id="input_text2" type="text" data-length="80">
-                  <label for="input_text2">Description</label>
-                </div>
-              </div>
-            </form>
+      </div>
+      <br><br>
+      <!--Create new playlist button-->
+      <div class="add-songs row">
+        <a id="back" class="col s4 offset-s2 m4 offset-m2 l2 offset-l4 waves-effect waves-light btn-large"><i
+            class="material-icons left">arrow_back</i>Back</a>
+        <a id="forward" class="col s4 m4 l2 waves-effect waves-light btn-large"><i
+            class="material-icons right">arrow_forward</i>Next</a>
+      </div>
 
-        <!-- Icon Dropdown Trigger -->
-        <div class="row">  
-          <div class="col s8 offset-s2">
-            <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Choose Icon <i class="large material-icons"> 
-              arrow_drop_down 
-          </i></a>
-  
-            <!-- Icon Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content'>
-              <li><a href="#!"><i class="material-icons black white-text">play_arrow</i></a></li>
-              <li><a href="#!"><i class="material-icons black white-text">star</i></a></li>
-              <li><a href="#!"><i class="material-icons black white-text">music_note</i></a></li>
-              <li><a href="#!"><i class="material-icons black white-text">headset</i></a></li>
-              <li><a href="#!"><i class="material-icons black white-text">tag_faces</i></a></li>
-              <li><a href="#!"><i class="material-icons black white-text">directions_run</i></a></li>
-              <li><a href="#!"><i class="material-icons black white-text">filter_vintage</i></a></li>
-              <li><a href="#!"><i class="material-icons black white-text">brightness_3</i></a></li>
-            </ul>
-            <!-- Color Dropdown Trigger -->
-            <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Choose Color <i class="large material-icons"> 
-              arrow_drop_down</i></a>
-  
-            <!-- Color Dropdown Structure -->
-            <ul id='dropdown2' class='dropdown-content'>
-              <li><a href="#!"class="grey-text">grey</a></li>
-              <li><a href="#!"class="red-text">red</a></li>
-              <li><a href="#!"class="yellow-text">yellow</a></li>
-              <li><a href="#!"class="purple-text">purple</a></li>
-              <li><a href="#!"class="pink-text">pink</a></li>
-              <li><a href="#!"class="blue-text">blue</a></li>
-              <li><a href="#!"class="teal-text">teal</a></li>
-              <li><a href="#!"class="orange-text">orange</a></li>
-            </ul>
-          </div>
-        </div>   
-        <br><br>
-        <!--Create new playlist button-->
-        <div class="add-songs row" id="create-playlist">
-            <a id="back" class="col s4 offset-s2 m4 offset-m2 l2 offset-l4 waves-effect waves-light btn-large"><i class="material-icons left">arrow_back</i>Back</a>
-            <a id="forward" class="col s4 m4 l2 waves-effect waves-light btn-large"><i class="material-icons right">arrow_forward</i>Next</a>
-        </div>
-
-    </main>
-    <!--Links to Javascript-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
-    <script src="assets/newplaylist.js"></script>
+  </main>
+  <!--Links to Javascript-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/newplaylist.js"></script>
 </body>
 
 </html>
