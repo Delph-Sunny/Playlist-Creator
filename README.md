@@ -22,8 +22,11 @@ The criteria for this app are:
 ## Image of the App
 
 ```
-Add image
-![](./assets/image/MyCoolPlaylist.png)
+![Splash Screen](./assets/image/screenshots/splash_screenshot.png)
+![Index](./assets/image/screenshots/index_screenshot.png)
+![New Playlist](./assets/image/screenshots/newplaylist_screenshot.png)
+![Playlist View](./assets/image/screenshots/playlistview_screenshot.png)
+![Results](./assets/image/screenshots/results_screenshot.png)
 ```
  
 ## Features
@@ -44,15 +47,15 @@ Search songs by artist and song title and returns details and youtube links
 
 ## Library, Frameworks and Tools
 
- - Front-end framework: Materialize
- - Javascript 
- - Library: JQuery
- - APIs: [Theaudiodb] and [lyricsovh]  
+- Front-end framework: Materialize
+- Javascript 
+- Library: JQuery
+- APIs: [Theaudiodb] and [lyricsovh]  
 
 ## Future Development
 
- - Add a meatball menu on songs to reorder them up and down.
- - Search only by one entry instead of 2.
+- Add a meatball menu on songs to reorder them up and down.
+- Search with only artist/song title
 
 ## License
 
