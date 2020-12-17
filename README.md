@@ -1,12 +1,20 @@
 # MY COOL PLAYLIST
---- 
-        IN PROGRESS
----
 
 ## Description 
+
+
 ```
-Add description
+USER STORY
 ```
+As a fan of music, I would have a music app so I can have playlists with my favorite songs and lyrics.  
+The criteria for this app are:   
+ - A splash screen appears only the first time the app is launched during a session.  
+ - The home page should have all previously created playlists, which could be removed individually or all at once. It also has a link to create a new playlist.  
+ - The new playlist contains a name, a description and an avatar.  
+ - The search page returns the results of 2 APIS with the songs information and youtube link.  
+ - The song can be added to the active playlist and store.   
+ - The list of songs of a playlist can be edited by removing individually each song.  
+ - The app should be responsive. 
 
 ## Image of the App
 
@@ -14,13 +22,11 @@ Add description
 Add image
 ![](./assets/image/MyCoolPlaylist.png)
 ```
-  
-
+ 
 ## Features
 
-```
-Add app features
-```
+Create a playlist
+Search songs by artist and song title and returns details and 
 
 ## Team Roles
 
@@ -32,7 +38,6 @@ Back-end work:
     - Bill  
     - Delphine  
 
-
 ## Library, Frameworks and Tools
 
  - Front-end framework: Materialize
@@ -42,7 +47,9 @@ Back-end work:
 
 ## Future Development
 
-TBD
+ - Add a meatball menu on songs to reorder them up and down
+ - Search only by one entry instead of 2
+
 
 ## Credits
  
