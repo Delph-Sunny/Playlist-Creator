@@ -137,3 +137,5 @@ $(document).ready(function () {   // if using modal, need to load the document
     $("#clear-results").click(function () {
         $("#results").empty();
     })
+
+})
