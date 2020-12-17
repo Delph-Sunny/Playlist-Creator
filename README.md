@@ -2,7 +2,7 @@
 
 ## Description 
 
-The webpage is a __music app__ created using Materialize, JQuery and several APIs. This app will allow a user to create playlists and records songs data. 
+The webpage is a __music app__ created using Materialize, JQuery and several APIs. This app will allow a user to create playlists and records songs data and lyrics. It also provides a link to YouTube to listen to the song and/or watch the music video. 
 
 ```
 USER STORY
