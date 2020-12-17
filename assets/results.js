@@ -58,8 +58,8 @@ $(document).ready(function () {   // if using modal, need to load the document
 
         var result = $(`<div class="result row">`);
         var flex = $(`<div class="flex-container">`);
-        var image = $(`<div><img class="image" width="200px" src=${thumb}></div>`);
-        var songData = $(`<div class="details"><h4>${title}</h4><p>Artist: ${artist}</p><p>Album: ${song.strAlbum}</p><a href= ${youtubeLink} target='_blank'>Watch on YouTube</a></div>`);
+        var image = $(`<div><img class="image playlistview-tmbnail" src=${thumb}></div>`);
+        var songData = $(`<div class="details"><h4 class="Songtitle">${title}</h4><p class="songinfo">Artist: ${artist}</p><p class="songinfo">Album: ${song.strAlbum}</p><a class="songinfo" href= ${youtubeLink} target='_blank'>Watch on YouTube</a></div>`);
         var addDiv = $(`<div class="position-right"></div>`);
 
         // Add to playlist Button
