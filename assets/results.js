@@ -26,7 +26,6 @@ $(document).ready(function () {   // if using modal, need to load the document
                     displayResults(tadbResponse, title, artist, response.lyrics)
                 })
             } else {
-                //    $('#error-modal').modal("toggle");   // if you prefer the modal
                 M.toast({ html: `Artist not found.<br>Check your spelling or pick another artist.`, classes: 'rounded' })
 
             }
@@ -73,7 +72,8 @@ $(document).ready(function () {   // if using modal, need to load the document
             songList.push(songData);  // push song object into array of songs 
             activePlaylist['songs'] = songList; // add array to active playlist
             userList[listIndex] = activePlaylist; // Replace active playlist into array of playlists
-            localStorage.setItem("playlistsList", JSON.stringify(userList)); // store    
+            localStorage.setItem("playlistsList", JSON.stringify(userList)); // store  
+            M.toast({ html: `Song added`, classes: 'rounded' })  
         })
 
         var collapsible = $(`<ul class="collapsible">`);
