@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    M.AutoInit();
     
     var userChoice = JSON.parse(localStorage.getItem("index"));
     var userList = JSON.parse(localStorage.getItem("playlistsList"));
