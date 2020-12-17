@@ -31,7 +31,7 @@ The criteria for this app are:
 ## Features
 
 Create a playlist  
-A search for songs with artist and song title returns details, lyrics, and Youtube links.
+Search for songs with artist and song title returns details, lyrics, and Youtube links.
 
 
 ## Team Roles
