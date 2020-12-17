@@ -1,12 +1,16 @@
 $(document).ready(function () {   // if using modal, need to load the document
+    M.AutoInit();
     var listIndex = JSON.parse(localStorage.getItem("index"));
     var userList = JSON.parse(localStorage.getItem("playlistsList"));
     var activePlaylist = userList[listIndex];
     var songList = activePlaylist['songs'] || [];
 
-    /* initialize modal or toast for the page */
+
+    /* initialize modal for the page */
     //$('.modal').modal();   // if we use the modal
-    M.AutoInit();  // if using toast
+
+    // Replace Playlist Name with active playlist
+    $(".playlist-title").text(activePlaylist['playlistName'])
 
     function calls(title, artist) {
         var queryURL = `https://theaudiodb.com/api/v1/json/1/searchtrack.php?s=${artist}&t=${title}`;
@@ -57,9 +61,9 @@ $(document).ready(function () {   // if using modal, need to load the document
         var image = $(`<div><img class="image" width="200px" src=${thumb}></div>`);
         var songData = $(`<div class="details"><h4>${title}</h4><p>Artist: ${artist}</p><p>Album: ${song.strAlbum}</p><a href= ${youtubeLink} target='_blank'>Watch on YouTube</a></div>`);
         var addDiv = $(`<div class="position-right"></div>`);
-        
+
         // Add to playlist Button
-        var addButton = $(`<a class="btn-floating btn-large waves-effect waves-light add-to-playlist"><i class="material-icons">add</i></a>`).click(function(event){
+        var addButton = $(`<a class="btn-floating btn-large waves-effect waves-light add-to-playlist"><i class="material-icons">add</i></a>`).click(function (event) {
             var songData = {                    // create an object with all data
                 title: title,
                 artist: artist,
@@ -73,7 +77,7 @@ $(document).ready(function () {   // if using modal, need to load the document
             activePlaylist['songs'] = songList; // add array to active playlist
             userList[listIndex] = activePlaylist; // Replace active playlist into array of playlists
             localStorage.setItem("playlistsList", JSON.stringify(userList)); // store  
-            M.toast({ html: `Song added`, classes: 'rounded' })  
+            M.toast({ html: `Song added`, classes: 'rounded' })
         })
 
         var collapsible = $(`<ul class="collapsible">`);
