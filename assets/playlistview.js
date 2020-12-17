@@ -42,6 +42,7 @@ $(document).ready(function () {
 
     songlistBuild();
 
+
     // Remove 1 playlist at the time
     $(document).on("click", "#remove", function (event) {
         event.stopPropagation();
