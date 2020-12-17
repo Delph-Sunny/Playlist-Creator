@@ -1,3 +1,4 @@
+$(document).ready(function () {   // if using modal, need to load the document
     M.AutoInit();
     var listIndex = JSON.parse(localStorage.getItem("index"));
     var userList = JSON.parse(localStorage.getItem("playlistsList"));
@@ -136,4 +137,3 @@
     $("#clear-results").click(function () {
         $("#results").empty();
     })
-
