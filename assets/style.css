@@ -19,7 +19,7 @@ body {
 .home-page {
     display: none;
 }
-
+/*Centering Elements*/
 .center {
     text-align: center;
 }
@@ -28,6 +28,7 @@ body {
     position: relative;
     left: 20%;
 }
+/*Welcome Message*/
 .bottom-margin {
     margin-bottom: 40px;
 }
@@ -38,6 +39,7 @@ body {
 .details {
     font-size: 15px;
 }
+/*Container & Formatting for Songs*/
 .flex-container {
     display: flex;
     align-items: center;
@@ -57,10 +59,6 @@ body {
     position: absolute;
     right: 15px;
 }
-
-
-
-
 .playlistview-tmbnail { 
     max-width: 50px;
     max-height: 50px;
@@ -72,6 +70,11 @@ h4 {
 
 .songinfo { 
     font-size: .84rem;
+}
+
+/*Dropdown*/
+.dropdown-content {
+    background-color: var(--bckgrd);
 }
 
 /*Media Queries*/
@@ -166,6 +169,10 @@ h4 {
      margin-right: 3%;
 }
 
+input[type="submit" i] {
+    color: var(--textall) !important;
+}
+
 /*Forward & Back Button*/
 
 #back {
@@ -257,4 +264,10 @@ h4 {
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+  }
+
+  .logo-size {
+      margin-top: 50px;
+      height: 400px;
+      width: 670px;
   }
