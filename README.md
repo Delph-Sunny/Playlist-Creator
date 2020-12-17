@@ -21,13 +21,12 @@ The criteria for this app are:
 
 ## Image of the App
 
-```
-![Splash Screen](assets/images/screenshots/splash_screenshot.png)
-![Index](assets/images/screenshots/index_screenshot.png)
-![New Playlist](assets/images/screenshots/newplaylist_screenshot.png)
-![Playlist View](assets/images/screenshots/playlistview_screenshot.png)
-![Results](assets/images/screenshots/results_screenshot.png)
-```
+
+![Splash Screen](/assets/images/screenshots/splash_screenshot.png)
+![Index](/assets/images/screenshots/index_screenshot.png)
+![New Playlist](/assets/images/screenshots/newplaylist_screenshot.png)
+![Playlist View](/assets/images/screenshots/playlistview_screenshot.png)
+![Results](/assets/images/screenshots/results_screenshot.png)
  
 ## Features
 
