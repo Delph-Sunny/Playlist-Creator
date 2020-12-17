@@ -82,7 +82,7 @@ h4 {
     background-color: var(--bckgrd);
 }
 
-/*Media Queries*/
+/*Media Queries for responsiveness*/
 @media only screen and (min-width: 993px) {
 
     .btn-large {
@@ -167,7 +167,19 @@ h4 {
 }
 input[type="submit" i] {
     color: var(--textall) !important;
+    width: 100%;
+    height: 100%;
 }
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 
 /*Forward & Back Button*/
 #back {
@@ -256,10 +268,26 @@ input[type="submit" i] {
     .sidenav a {font-size: 18px;}
 }
 
+/*Media Queries for logo size responsiveness*/
 .logo-size {
       margin-top: 50px;
-      height: 400px;
-      width: 670px;
+      height: 230px;
+      width: 385px;
 }
 
-  
+@media screen and (min-width: 769px) {
+    .logo-size {
+        margin-top: 50px;
+        height: 300px;
+        width: 500px;
+  }
+}
+
+@media screen and (min-width: 1025px)  {
+
+    .logo-size {
+        margin-top: 50px;
+        height: 380px;
+        width: 655px;
+  }
+}
