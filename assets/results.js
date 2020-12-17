@@ -80,7 +80,7 @@ $(document).ready(function () {   // if using modal, need to load the document
             M.toast({ html: `Song added`, classes: 'rounded' })
         })
 
-        var collapsible = $(`<ul class="collapsible">`);
+        var collapsible = $(`<ul class="collapsible space">`);
         var li = $(`<li>`);
         var collapsibleHeader = $(`<div class="collapsible-header"><i class="material-icons">queue_music</i>View Lyrics</div>`);
         var collapsibleBody = $(`<div class="collapsible-body"><pre>${lyrics}</pre></div>`);

@@ -19,7 +19,7 @@ body {
 .home-page {
     display: none;
 }
-
+/*Centering Elements*/
 .center {
     text-align: center;
 }
@@ -28,6 +28,7 @@ body {
     position: relative;
     left: 20%;
 }
+/*Welcome Message*/
 .bottom-margin {
     margin-bottom: 40px;
 }
@@ -38,12 +39,16 @@ body {
 .details {
     font-size: 15px;
 }
+/*Container & Formatting for Songs*/
 .flex-container {
     display: flex;
     align-items: center;
     max-height: 100px;
     padding-bottom: 20px;
     padding-top: 20px;
+}
+.space {
+    margin-top: 25px;
 }
 .image {
     margin-left: 10px;
@@ -54,14 +59,6 @@ body {
     position: absolute;
     right: 15px;
 }
-
-/* DropDowns */
-.dropdown-content li {
-    background-color: var(--bckgrd); 
-}
-
-
-
 .playlistview-tmbnail { 
     max-width: 50px;
     max-height: 50px;
@@ -73,6 +70,11 @@ h4 {
 
 .songinfo { 
     font-size: .84rem;
+}
+
+/*Dropdown*/
+.dropdown-content {
+    background-color: var(--bckgrd);
 }
 
 /*Media Queries*/
@@ -116,21 +118,17 @@ h4 {
     }  
 }
 
-/*Nav Bar Design*/
+/*Nav Bar*/
 .nav-wrapper {
     background-color: var(--navbckgrnd);
     padding-left: 1%;
-}
-
-.title {
-    font-size: 20px;
 }
 
 .collection .collection-item, .modal {
     background-color: var(--listbckgrnd); 
 }
 
-/*Collapsable Design*/
+/*Collapsable*/
 
 .collapsible-header {
     background-color: var(--listbckgrnd);
@@ -138,11 +136,7 @@ h4 {
 }
 
 
-
-
-
-
-/*Button Design*/
+/*Buttons*/
 .btn-large {
     background-color: var(--orangeb4) !important;
     text-transform: none;
@@ -173,6 +167,10 @@ h4 {
 
 .btn-margin {
      margin-right: 3%;
+}
+
+input[type="submit" i] {
+    color: var(--textall) !important;
 }
 
 /*Forward & Back Button*/
@@ -236,7 +234,7 @@ h4 {
 
 /* Splash Screen */
 .overlay {  
-    background-image:url('./images/splash.png');  
+    background-image:url('./images/street.png');  
     height: 100%;
     width: 100%;
     position: fixed;
@@ -253,7 +251,7 @@ h4 {
     background-size: cover;
 }
 .fadedcolor {
-    background: linear-gradient(to bottom right, rgba(235, 128, 7, 0.555),rgba(6, 2, 41, 0.719), rgba(241, 14, 203, 0.596));
+    background: linear-gradient(to bottom right, rgba(2, 0, 22, 0.514),rgba(4, 2, 85, 0.459), rgba(238, 130, 6, 0.603));
     height: 100%; 
     width: 100%;
 }
@@ -266,4 +264,10 @@ h4 {
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+  }
+
+  .logo-size {
+      margin-top: 50px;
+      height: 400px;
+      width: 670px;
   }
