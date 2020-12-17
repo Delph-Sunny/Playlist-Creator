@@ -22,8 +22,8 @@ $(document).ready(function () {
             songEl.attr("data-index", i);
 
             var flex = $(`<div class="flex-container"></div>`);
-            var image = $(`<div onclick="location.href='${songList[i].link}' "><img class="image playlistview-tmbnail" src=${songList[i].thumbnail}></div>`);
-            var details = $(`<div class="details" onclick="location.href='${songList[i].link}' "> <h4 class="Songtitle">${songList[i].title}</h4> <p class="songinfo">${songList[i].artist}</p> <p class="songinfo">${songList[i].album}</p> </div>`);
+            var image = $(`<div><a class="alink" href="${songList[i].link}" target="_blank"/><img class="image playlistview-tmbnail" src=${songList[i].thumbnail}></a></div>`);
+            var details = $(`<div class="detail-txt"><a href="${songList[i].link}" target="_blank"/><h4 class="Songtitle">${songList[i].title}</h4> <p class="songinfo">${songList[i].artist}</p> <p class="songinfo">${songList[i].album}</p></a></div>`);
             var remove = $(`<div class="position-right"> <a class="btn-floating btn-large waves-effect waves-light" id="remove" data-index="${i}"> <i class="material-icons">remove</i></a> </div>`);
             var collapsible = $(`<ul class="collapsible"> <li> <div class="collapsible-header"> <i class="material-icons">queue_music</i>View Lyrics</div> <div class="collapsible-body"><pre>${songList[i].lyrics}</pre></div></li></ul></div>`);
 
