@@ -45,6 +45,9 @@ body {
     padding-bottom: 20px;
     padding-top: 20px;
 }
+.space {
+    margin-top: 25px;
+}
 .image {
     margin-left: 10px;
     margin-right: 15px;
@@ -121,9 +124,6 @@ h4 {
 .collection .collection-item, .modal {
     background-color: var(--listbckgrnd); 
 }
-nav .brand-logo {
-    font-size: 20px;
-}
 
 /*Collapsable*/
 
@@ -131,9 +131,6 @@ nav .brand-logo {
     background-color: var(--listbckgrnd);
     
 }
-
-
-
 
 
 /*Buttons*/
