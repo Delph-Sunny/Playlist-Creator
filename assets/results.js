@@ -42,7 +42,7 @@ $(document).ready(function () {   // if using modal, need to load the document
 
         var thumb = song.strTrackThumb;
         if (thumb === null) {
-            thumb = "assets/images/missing-thumbnail.png"
+            thumb = "assets/images/mycoolplaylistlogoonly.png"
         }
 
         var youtubeLink = song.strMusicVid;
