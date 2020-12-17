@@ -67,10 +67,6 @@ body {
     padding-left: 1%;
 }
 
-.title {
-    font-size: 20px;
-}
-
 .collection .collection-item, .modal {
     background-color: var(--listbckgrnd); 
 }
@@ -190,7 +186,7 @@ nav .brand-logo {
 
 /* Splash Screen */
 .overlay {  
-    background-image:url('./images/splash.png');  
+    background-image:url('./images/street.png');  
     height: 100%;
     width: 100%;
     position: fixed;
