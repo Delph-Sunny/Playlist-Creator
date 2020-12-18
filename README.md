@@ -56,7 +56,6 @@ Search for songs with artist and song title returns details, lyrics, and Youtube
 - Add a meatball menu on songs to reorder them (push them up or down one).
 - Search with only artist or song title.
 - Nav bar contain all created playlists.
-- Ability to add more songs to playlist after its initial creation.
 - Ability to play songs directly from page using a paid API that allows this.
 - Ability to autoplay, shuffle, and repeat songs  
 
