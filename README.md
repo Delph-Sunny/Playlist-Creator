@@ -68,7 +68,7 @@ Thank you to out instructor and TA's who answered questions and helped with any 
 Copyright (c) 2020 Room 1. Everyone is permitted to use, copy, and modify verbatim copies of this document.
 
 ---
-[link]: https://sossw1.github.io/Playlist-Creator
+[link]: https://delph-sunny.github.io/Playlist-Creator/
 [Theaudiodb]: https://www.theaudiodb.com/api_guide.php
 [lyricsovh]: https://lyricsovh.docs.apiary.io/#
 [Materialize]: https://materializecss.com/getting-started.html
